@@ -1,67 +1,50 @@
 import Head from 'next/head'
-import styles from '../../styles/Home.module.scss'
+import styles from '@base/styles/Home.module.scss'
+import { GetStaticProps, InferGetStaticPropsType } from 'next'
+import LocalApi from '@base/service/local.service'
+import Link from 'next/link'
 
-const App = () => {
+const App = ({ categories }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next Fran</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Mercado Libre - Home</title>
       </Head>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.Fran!</a>
+          Welcome to <a href="https://nextjs.org">Next.TEST!</a>
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{' '}
+          Get started by editing
           <code className={styles.code}>pages/index.js</code>
         </p>
 
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+          {categories.map((categorie) => {
+            return (
+              <Link href={`categorie/${categorie.id}`} key={categorie.id}>
+                <div key={categorie.id} className={styles.card}>
+                  <h3>{categorie.name}</h3>
+                </div>
+              </Link>
+            )
+          })}
         </div>
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
     </div>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const localApi = new LocalApi()
+  const categories = await localApi.getCategories()
+  return {
+    props: {
+      categories,
+    },
+  }
 }
 
 export default App

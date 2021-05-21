@@ -9,14 +9,16 @@ This project is a meli clon app, using [NextJS](https://nextjs.org/) and deployi
 In this project im using:
 
 - NextJS
+- Typescript
 - React Context
 - ChakraUI
 - React Testing Library
 - Jest
 - Cypress
 - EsLint
-- Serverless framework
-- Serverless component
+- Prettier
+- Serverless Framework
+- Serverless Component
 
 ### Structure
 
