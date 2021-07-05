@@ -14,7 +14,7 @@ class ApiClient {
 
   request() {
     return {
-      get: (url: string) => this.instance.get(url).then(this.responseBody),
+      get: (url: string, query: unknown) => this.instance.get(url, query).then(this.responseBody),
       post: (url: string, body: unknown) => this.instance.post(url, body).then(this.responseBody),
       put: (url: string, body: unknown) => this.instance.put(url, body).then(this.responseBody),
       delete: (url: string) => this.instance.delete(url).then(this.responseBody),

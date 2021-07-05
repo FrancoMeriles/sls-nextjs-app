@@ -16,6 +16,14 @@ class MeliService {
   async getCategorie(categoryId: string): Promise<CategorieType> {
     return this.request.get(`/categories/${categoryId}`)
   }
+
+  async getProductsByCategory(categoryId: string) {
+    return this.request.get('/sites/MLA/search', {
+      params: {
+        category: categoryId,
+      },
+    })
+  }
 }
 
 export default MeliService

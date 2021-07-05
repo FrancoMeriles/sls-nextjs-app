@@ -13,7 +13,7 @@ class LocalApi {
     return this.request.get('/categories')
   }
 
-  async getCategorie(categorieId: string): Promise<CategorieType> {
+  async getCategoriePage(categorieId: string): Promise<CategorieType> {
     return this.request.get(`/categories/${categorieId}`)
   }
 }
