@@ -5,12 +5,11 @@ import LocalApi from '@base/service/local.service'
 import { Container, Grid } from '@chakra-ui/react'
 import CategorieHeader from '@base/components/CategorieHeader'
 import Card from '@base/components/Card'
-import Pager from '@base/components/Paginator'
+import Pager from '@base/components/Pager'
 
 const Index = ({
   categorie,
   products,
-  paging,
   categorieId,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
@@ -25,7 +24,7 @@ const Index = ({
             return <Card key={product.id} {...product} />
           })}
         </Grid>
-        <Pager paging={paging} url={`/categorie/${categorieId}/products`} />
+        <Pager url={`/categorie/${categorieId}/products`} />
       </Container>
     </>
   )

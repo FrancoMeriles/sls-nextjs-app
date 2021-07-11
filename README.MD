@@ -10,6 +10,7 @@ In this project im using:
 
 - NextJS
 - Typescript
+- Scss Modules
 - React Context
 - ChakraUI
 - React Testing Library

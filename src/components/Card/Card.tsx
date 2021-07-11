@@ -9,7 +9,7 @@ const CategorieCard = ({ id, title, thumbnail, price, shipping, original_price }
     console.log('clickeo', id)
   }
   return (
-    <LinkBox bg="white" borderRadius={5} boxShadow="lg" role="group">
+    <LinkBox bg="white" borderRadius={5} boxShadow="md" role="group">
       <HeartFull
         boxSize="5"
         pos="absolute"

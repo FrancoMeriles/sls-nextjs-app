@@ -14,9 +14,5 @@ export default async (req, res) => {
       picture: categorie.picture,
     },
     products: products.results,
-    paging: {
-      ...products.paging,
-      currentPage: page,
-    },
   })
 }

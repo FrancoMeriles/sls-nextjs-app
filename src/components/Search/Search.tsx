@@ -11,7 +11,7 @@ const Search = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault()
     router.push({
-      pathname: 'products',
+      pathname: '/products',
       query: {
         q: value,
         page: 1,
