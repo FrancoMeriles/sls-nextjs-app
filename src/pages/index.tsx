@@ -5,7 +5,7 @@ import LocalApi from '@base/service/local.service'
 import CategorieCard from '@base/components/CategorieCard'
 import { CategorieType } from '@base/types'
 
-const App = ({ categories }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Index = ({ categories }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
       <Head>
@@ -32,4 +32,4 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-export default App
+export default Index

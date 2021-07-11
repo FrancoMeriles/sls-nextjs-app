@@ -1,5 +1,5 @@
 import ApiClient from './apiClient'
-import { CategoriesType, CategorieType } from '@base/types'
+import { CategoriesType, CategorieType, PagingType, ProductsType } from '@base/types'
 
 class LocalApi {
   apiClient: any
@@ -13,8 +13,28 @@ class LocalApi {
     return this.request.get('/categories')
   }
 
-  async getCategoriePage(categorieId: string): Promise<CategorieType> {
-    return this.request.get(`/categories/${categorieId}`)
+  async getProductsByCategorie(
+    categorieId: string,
+    pageNumber: number
+  ): Promise<{ categorie: CategorieType; products: ProductsType; paging: PagingType }> {
+    return this.request.get(`/categories/${categorieId}/products`, {
+      params: {
+        page: pageNumber,
+      },
+    })
+  }
+
+  async getProductById(id: string): Promise<any> {
+    return this.request.get(`/product/${id}`)
+  }
+
+  async getProductsByQuery(query: string, page: number): Promise<any> {
+    return this.request.get(`/products`, {
+      params: {
+        query,
+        page,
+      },
+    })
   }
 }
 

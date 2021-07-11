@@ -1,17 +1,26 @@
 import React from 'react'
 import { Button, Input, InputGroup, InputRightElement } from '@chakra-ui/react'
 import { SearchIcon } from '@chakra-ui/icons'
+import { useRouter } from 'next/router'
 
 const Search = () => {
+  const router = useRouter()
   const [value, setValue] = React.useState('')
   const handleChange = (event) => setValue(event.target.value)
 
-  const submitest = (e) => {
+  const handleFormSubmit = (e) => {
     e.preventDefault()
+    router.push({
+      pathname: 'products',
+      query: {
+        q: value,
+        page: 1,
+      },
+    })
   }
 
   return (
-    <form onSubmit={submitest}>
+    <form onSubmit={handleFormSubmit}>
       <InputGroup borderColor="transparent">
         <Input
           value={value}

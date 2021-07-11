@@ -1,3 +1,4 @@
-import Heart from './Heart'
+import HeartFull from './HeartFull'
+import HeartOutline from './HeartOutline'
 
-export { Heart }
+export { HeartFull, HeartOutline }

@@ -17,10 +17,24 @@ class MeliService {
     return this.request.get(`/categories/${categoryId}`)
   }
 
-  async getProductsByCategory(categoryId: string) {
+  async getProductsByCategory(categoryId: string, pageNumber: number) {
     return this.request.get('/sites/MLA/search', {
       params: {
         category: categoryId,
+        offset: 50 * pageNumber,
+      },
+    })
+  }
+
+  async getProductById(productId: string) {
+    return this.request.get(`/items/${productId}`)
+  }
+
+  async getProductsByQuery(query: string, page: number): Promise<any> {
+    return this.request.get(`/sites/MLA/search`, {
+      params: {
+        q: query,
+        offset: 50 * page,
       },
     })
   }

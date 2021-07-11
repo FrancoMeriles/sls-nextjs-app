@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { Box, Flex } from '@chakra-ui/react'
-import { Heart } from '@base/icons'
+import { HeartFull } from '@base/icons'
 import Search from '@base/components/Search'
 
 const Header = (props) => {
@@ -26,8 +26,8 @@ const Header = (props) => {
         </Link>
       </Flex>
       <Search />
-      <Box width="20px" height="20px" ml={2} mr={2}>
-        <Heart />
+      <Box ml={2} mr={2}>
+        <HeartFull boxSize={5} />
       </Box>
     </Flex>
   )
