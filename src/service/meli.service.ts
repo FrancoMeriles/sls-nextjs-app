@@ -38,6 +38,22 @@ class MeliService {
       },
     })
   }
+
+  async getRatedProductById(productID) {
+    return this.request.get(`/reviews/item/${productID}`)
+  }
+
+  async getDescriptionByProduct(productID, descriptionID) {
+    return this.request.get(`/items/${productID}/descriptions/${descriptionID}`)
+  }
+
+  async getShippingOptionsByProductId(productID) {
+    return this.request.get(`/items/${productID}/shipping_options`, {
+      params: {
+        zip_code: 5000,
+      },
+    })
+  }
 }
 
 export default MeliService

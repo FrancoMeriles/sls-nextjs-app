@@ -9,4 +9,15 @@ const getPriceFormatted = (price) => (price ? getPesoFormatted(price).format() :
 const getPriceRound = (highPrice, lowPrice) =>
   Math.round(((highPrice - lowPrice) / highPrice) * 100)
 
-export { getRandomColor, getPriceFormatted, getPriceRound }
+const getStarsToRate = (rate) => {
+  const QUANTITY_STARS = 5
+
+  const rates = []
+  for (let i = 1; i <= QUANTITY_STARS; i++) {
+    const star = rate >= i ? 'full' : rate > i - 1 ? 'half' : 'full'
+    rates.push(star)
+  }
+  return rates
+}
+
+export { getRandomColor, getPriceFormatted, getPriceRound, getStarsToRate }

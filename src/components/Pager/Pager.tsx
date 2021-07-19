@@ -30,7 +30,7 @@ const Pager = ({ url }) => {
       >
         Anterior
       </Button>
-      <Tag size="lg" fontWeight="bold" paddingLeft={4} paddingRight={4}>
+      <Tag size="lg" fontWeight="bold" bg="white" paddingLeft={4} paddingRight={4}>
         {page}
       </Tag>
       <Button

@@ -1,24 +1,12 @@
 import { useEffect, useState } from 'react'
-import { ChakraProvider, extendTheme, Box } from '@chakra-ui/react'
+import { ChakraProvider, Box } from '@chakra-ui/react'
+import theme from '@base/styles/theme'
 import Header from '@base/components/Header'
 import Footer from '@base/components/Footer'
 import '@base/styles/globals.scss'
 import classes from '@base/styles/Main.module.scss'
 import { useRouter } from 'next/router'
 import { Spinner } from '@chakra-ui/react'
-
-const theme = extendTheme({
-  colors: {
-    brand: {
-      100: '#fff159',
-      200: '#00a650',
-      300: '#3483fa',
-    },
-    black: {
-      300: '#333',
-    },
-  },
-})
 
 function MyApp({ Component, pageProps }) {
   const [loading, setLoding] = useState(false)
