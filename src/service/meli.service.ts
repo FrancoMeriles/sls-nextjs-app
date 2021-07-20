@@ -43,8 +43,8 @@ class MeliService {
     return this.request.get(`/reviews/item/${productID}`)
   }
 
-  async getDescriptionByProduct(productID, descriptionID) {
-    return this.request.get(`/items/${productID}/descriptions/${descriptionID}`)
+  async getDescriptionByProductId(productID) {
+    return this.request.get(`/items/${productID}/description`)
   }
 
   async getShippingOptionsByProductId(productID) {

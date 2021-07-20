@@ -11,13 +11,9 @@ const getPriceRound = (highPrice, lowPrice) =>
 
 const getStarsToRate = (rate) => {
   const QUANTITY_STARS = 5
-
-  const rates = []
-  for (let i = 1; i <= QUANTITY_STARS; i++) {
-    const star = rate >= i ? 'full' : rate > i - 1 ? 'half' : 'full'
-    rates.push(star)
-  }
-  return rates
+  return [...Array(QUANTITY_STARS).keys()].map((star) =>
+    rate >= star + 1 ? 'full' : rate > star ? 'half' : 'empty'
+  )
 }
 
 export { getRandomColor, getPriceFormatted, getPriceRound, getStarsToRate }

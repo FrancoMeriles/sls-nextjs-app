@@ -23,10 +23,11 @@ dayjs.locale('es') // use Spanish locale globally
 const ContentShippingOptions = ({ shippingOptions }) => {
   const modalDevolution = useDisclosure()
   const modalDeliveryMethod = useDisclosure()
-
   const { options } = shippingOptions
   const bestShippingOption = options.find(({ display }) => display === 'recommended')
-  const allwaysShippingOption = options.find(({ display }) => display === 'always')
+  const allwaysShippingOption = options.find(
+    ({ shipping_option_type }) => shipping_option_type === 'agency'
+  )
 
   const dateArrive = dayjs(bestShippingOption.estimated_delivery_time.date).format(
     'dddd D [de] MMMM'
@@ -199,7 +200,7 @@ const ContentShippingOptions = ({ shippingOptions }) => {
                     Gratis
                   </Text>
                 ) : (
-                  <Text fontSize="md">{getPriceFormatted(bestShippingOption.base_cost)}</Text>
+                  <Text fontSize="md">{getPriceFormatted(allwaysShippingOption.base_cost)}</Text>
                 )}
               </Flex>
             </Box>

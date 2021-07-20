@@ -8,6 +8,8 @@ import Money from './Money'
 import Position from './Position'
 import Shield from './Shield'
 import Warranty from './Warranty'
+import Check from './Check'
+import Thumbs from './Thumbs'
 
 export {
   HeartFull,
@@ -20,4 +22,6 @@ export {
   Position,
   Shield,
   Warranty,
+  Check,
+  Thumbs,
 }
