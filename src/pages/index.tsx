@@ -1,11 +1,11 @@
 import Head from 'next/head'
-import { GetStaticProps, InferGetStaticPropsType } from 'next'
+import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
 import { Container, Grid } from '@chakra-ui/react'
 import LocalApi from '@base/service/local.service'
 import CategorieCard from '@base/components/CategorieCard'
 import { CategorieType } from '@base/types'
 
-const Index = ({ categories }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Index = ({ categories }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
     <>
       <Head>
@@ -22,7 +22,7 @@ const Index = ({ categories }: InferGetStaticPropsType<typeof getStaticProps>) =
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const localApi = new LocalApi()
   const categories = await localApi.getCategories()
   return {
