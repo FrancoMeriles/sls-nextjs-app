@@ -1,7 +1,7 @@
 // General
 import Head from 'next/head'
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
-import { Container, Box, Grid, GridItem, Heading, Button, Text } from '@chakra-ui/react'
+import { Container, Box, Grid, GridItem, Heading } from '@chakra-ui/react'
 import ImageGallery from 'react-image-gallery'
 
 // Components
@@ -13,25 +13,30 @@ import ContentShippingOptions from '@base/components/ContentShippingOptions'
 import ReviewProduct from '@base/components/ReviewProduct'
 import ProductFeatures from '@base/components/ProductFeatures'
 import ProductDescription from '@base/components/ProductDescription'
+import ProductActions from '@base/components/ProductActions'
 
 // Serivces
 import LocalApi from '@base/service/local.service'
 
 const Index = ({
-  title,
-  condition,
-  sold_quantity,
-  original_price,
-  price,
-  available_quantity,
+  product,
   productRated,
   shippingOptions,
-  warranty,
-  accepts_mercadopago,
-  pictures,
   productDescription,
-  attributes,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+  const {
+    id,
+    title,
+    condition,
+    sold_quantity,
+    original_price,
+    price,
+    available_quantity,
+    warranty,
+    accepts_mercadopago,
+    pictures,
+    attributes: producAttributes,
+  } = product
   const { rating_average, rating_levels, reviews } = productRated
 
   const images = pictures.map((picture) => ({
@@ -56,7 +61,7 @@ const Index = ({
                 thumbnailPosition={'left'}
               />
               <Box p={{ sm: 3, md: 10 }} mt={10}>
-                <ProductFeatures attributes={attributes} />
+                <ProductFeatures attributes={producAttributes} />
               </Box>
               <Box p={{ sm: 3, md: 10 }}>
                 <ProductDescription productDescription={productDescription} />
@@ -77,17 +82,16 @@ const Index = ({
                   {title}
                 </Heading>
                 <RatedProduct
-                  rateAverage={rating_average}
+                  ratingAverage={rating_average}
                   sumRatingsOpinions={sumRatingsOpinions}
                 />
                 <ContentPrice original_price={original_price} price={price} />
                 <ContentShippingOptions shippingOptions={shippingOptions} />
-                <Text fontSize="xs" color="black" fontWeight="semibold" mt={4}>
-                  {available_quantity > 0 ? 'Stock disponible' : 'Sin stock'}
-                </Text>
-                <Button w="100%" size="lg" colorScheme="brand" mt={2}>
-                  Comprar ahora
-                </Button>
+                <ProductActions
+                  available_quantity={available_quantity}
+                  productId={id}
+                  product={product}
+                />
                 <ContentOptions warranty={warranty} accepts_mercadopago={accepts_mercadopago} />
               </Box>
             </GridItem>

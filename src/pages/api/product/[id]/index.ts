@@ -9,5 +9,5 @@ export default async (req, res) => {
     meliService.getShippingOptionsByProductId(id),
     meliService.getDescriptionByProductId(id),
   ])
-  res.status(200).json({ ...product, productRated, shippingOptions, productDescription })
+  res.status(200).json({ product, productRated, shippingOptions, productDescription })
 }

@@ -3,13 +3,14 @@ import { Button, Input, InputGroup, InputRightElement } from '@chakra-ui/react'
 import { SearchIcon } from '@chakra-ui/icons'
 import { useRouter } from 'next/router'
 
-const Search = () => {
+const Search = ({ onClose }) => {
   const router = useRouter()
   const [value, setValue] = React.useState('')
   const handleChange = (event) => setValue(event.target.value)
 
   const handleFormSubmit = (e) => {
     e.preventDefault()
+    onClose()
     router.push({
       pathname: '/products',
       query: {

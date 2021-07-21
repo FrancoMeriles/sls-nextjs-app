@@ -6,6 +6,9 @@ const getPesoFormatted = (value) => currency(value, { separator: '.', decimal: '
 
 const getPriceFormatted = (price) => (price ? getPesoFormatted(price).format() : 0)
 
+const checkIfProductExistInFavorite = (products, productId) =>
+  products.some((product) => product.id === productId)
+
 const getPriceRound = (highPrice, lowPrice) =>
   Math.round(((highPrice - lowPrice) / highPrice) * 100)
 
@@ -16,4 +19,10 @@ const getStarsToRate = (rate) => {
   )
 }
 
-export { getRandomColor, getPriceFormatted, getPriceRound, getStarsToRate }
+export {
+  getRandomColor,
+  getPriceFormatted,
+  getPriceRound,
+  getStarsToRate,
+  checkIfProductExistInFavorite,
+}

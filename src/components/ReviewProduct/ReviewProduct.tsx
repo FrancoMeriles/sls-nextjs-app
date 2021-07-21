@@ -5,7 +5,7 @@ import ReviewProductHeader from '@base/components/ReviewProductHeader'
 const ReviewProduct = ({ allReviews, ratingAverage, sumRatingsOpinions, ratingLevels }) => {
   const positiveReviews = allReviews.filter((review) => review.rate > 3)
   const negativeReviews = allReviews.filter((review) => review.rate < 3)
-  return (
+  return ratingAverage ? (
     <>
       <ReviewProductHeader
         ratingAverage={ratingAverage}
@@ -38,7 +38,7 @@ const ReviewProduct = ({ allReviews, ratingAverage, sumRatingsOpinions, ratingLe
         </TabPanels>
       </Tabs>
     </>
-  )
+  ) : null
 }
 
 export default ReviewProduct

@@ -1,15 +1,15 @@
 import { Flex, Text } from '@chakra-ui/react'
 import RatedStar from '../RatedStar'
 
-const ProductRated = ({ rateAverage, sumRatingsOpinions }) => {
-  return (
+const ProductRated = ({ ratingAverage, sumRatingsOpinions }) => {
+  return ratingAverage ? (
     <Flex alignItems="center" mt={3}>
-      <RatedStar rateAverage={rateAverage} boxSize={4} />
+      <RatedStar rateAverage={ratingAverage} boxSize={4} />
       <Text fontSize="xs" color="gray.400" ml={2} pt={1}>
         {sumRatingsOpinions} Opiniones
       </Text>
     </Flex>
-  )
+  ) : null
 }
 
 export default ProductRated
