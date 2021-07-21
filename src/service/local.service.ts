@@ -5,7 +5,7 @@ class LocalApi {
   apiClient: any
   request: any
   constructor() {
-    this.apiClient = new ApiClient('http://localhost:3000/api')
+    this.apiClient = new ApiClient(process.env.NEXT_PUBLIC_PRODUCTION_API_HOST)
     this.request = this.apiClient.request()
   }
 
