@@ -1,25 +1,29 @@
-import { getPage } from 'next-page-tester';
-import { screen } from '@testing-library/react';
-import "@base/service/local.service"
+import { render, screen } from '@testing-library/react'
+import App from '@base/pages'
+import renderer from 'react-test-renderer'
 
-jest.mock('@base/service/local.service', () => jest.fn(() => ({
-  getCategories: () => [{id: 1, name: 'test'}, {id: 2, name: 'another'}],
-})));
-describe('Blog page', () => {
-  it('page renders and matches snapshot', async () => {
-    const { serverRenderToString } = await getPage({
-      route: '/',
-      useDocument: true,
-    });
-    const { html } = serverRenderToString();
-    expect(html).toMatchSnapshot();
-  });
-  it('renders blog page', async () => {
-    const { render } = await getPage({
-      route: '/',
-    });
+jest.mock('@base/utils', () => ({
+  getRandomColor: () => 'hsl(214,100%,50%)',
+}))
 
-    render();
-    expect(screen.getByText('Welcome to')).toBeInTheDocument();
-  });
-});
+const mockCategories = [
+  { id: 1, name: '__FIRST_NAME__' },
+  { id: 2, name: '__SECOND_NAME__' },
+]
+
+describe('App', () => {
+  it('should render and match snapshot with required props', () => {
+    const tree = renderer.create(<App categories={mockCategories} />).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+  it('should renders and display two categories with the correct name and url', async () => {
+    render(<App categories={mockCategories} />)
+    mockCategories.forEach((mockCategorie) => {
+      expect(screen.getByText(mockCategorie.name)).toBeInTheDocument()
+      expect(screen.getByText(mockCategorie.name).closest('a')).toHaveAttribute(
+        'href',
+        `/categorie/${mockCategorie.id}/products?page=1`
+      )
+    })
+  })
+})
