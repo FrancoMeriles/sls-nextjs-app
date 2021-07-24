@@ -47,10 +47,10 @@ class MeliService {
     return this.request.get(`/items/${productID}/description`)
   }
 
-  async getShippingOptionsByProductId(productID) {
+  async getShippingOptionsByProductId(productID, zip_code) {
     return this.request.get(`/items/${productID}/shipping_options`, {
       params: {
-        zip_code: 5000,
+        zip_code: zip_code,
       },
     })
   }

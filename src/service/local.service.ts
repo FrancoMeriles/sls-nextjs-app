@@ -28,6 +28,14 @@ class LocalApi {
     return this.request.get(`/product/${id}`)
   }
 
+  async getShippingOptionsByProductIdAndZipCode(id: string, zip_code: number): Promise<any> {
+    return this.request.get(`/product/${id}/shipping`, {
+      params: {
+        zip_code: zip_code,
+      },
+    })
+  }
+
   async getProductsByQuery(query: string, page: number): Promise<any> {
     return this.request.get(`/products`, {
       params: {
@@ -35,6 +43,10 @@ class LocalApi {
         page,
       },
     })
+  }
+
+  async getZipCode(): Promise<any> {
+    return this.request.get('/zipcode')
   }
 }
 

@@ -15,12 +15,14 @@ import {
   chakra,
 } from '@chakra-ui/react'
 import { Devolutions, Truck, Money, Calendar, Position } from '@base/icons'
-import 'dayjs/locale/es' // load on demand
+import 'dayjs/locale/es'
 import dayjs from 'dayjs'
 import { getPriceFormatted } from '@base/utils'
+import { useZipCode } from '@base/contexts/ZipCode'
+dayjs.locale('es')
 
-dayjs.locale('es') // use Spanish locale globally
 const ContentShippingOptions = ({ shippingOptions }) => {
+  const zipCode = useZipCode()
   const modalDevolution = useDisclosure()
   const modalDeliveryMethod = useDisclosure()
   const { options } = shippingOptions
@@ -52,8 +54,7 @@ const ContentShippingOptions = ({ shippingOptions }) => {
               <chakra.span fontWeight="semibold" color="brand.200">
                 el {dateArrive}
               </chakra.span>{' '}
-              por
-              {getPriceFormatted(bestShippingOption.base_cost)}
+              por {getPriceFormatted(bestShippingOption.base_cost)}
             </Text>
           )}
           <Text fontSize="xs" color="gray.500">
@@ -165,7 +166,7 @@ const ContentShippingOptions = ({ shippingOptions }) => {
             <Flex marginTop={4} alignItems="center" p={5} bg="gray.100" borderRadius={5}>
               <Position color="brand.300" />
               <Text color="gray.500" ml={5} fontSize="sm">
-                CP: 5000 - Córdoba, Córdoba
+                {zipCode && `CP: ${zipCode}`}
               </Text>
             </Flex>
 

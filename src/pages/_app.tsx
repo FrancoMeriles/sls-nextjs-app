@@ -8,6 +8,7 @@ import classes from '@base/styles/Main.module.scss'
 import { useRouter } from 'next/router'
 import { Spinner } from '@chakra-ui/react'
 import { FavoriteProvider } from '@base/contexts/Favorite'
+import { ZipCodeProvider } from '@base/contexts/ZipCode'
 
 function MyApp({ Component, pageProps }) {
   const [loading, setLoding] = useState(false)
@@ -33,20 +34,22 @@ function MyApp({ Component, pageProps }) {
   }, [router])
 
   return (
-    <FavoriteProvider>
-      <ChakraProvider theme={theme}>
-        {loading && (
-          <Box className={classes.Spinner}>
-            <Spinner size="xl" color="brand.100" thickness="3px" />
-          </Box>
-        )}
-        <Header />
-        <main className={classes.Main}>
-          <Component {...pageProps} />
-        </main>
-        <Footer />
-      </ChakraProvider>
-    </FavoriteProvider>
+    <ZipCodeProvider>
+      <FavoriteProvider>
+        <ChakraProvider theme={theme}>
+          {loading && (
+            <Box className={classes.Spinner}>
+              <Spinner size="xl" color="brand.100" thickness="3px" />
+            </Box>
+          )}
+          <Header />
+          <main className={classes.Main}>
+            <Component {...pageProps} />
+          </main>
+          <Footer />
+        </ChakraProvider>
+      </FavoriteProvider>
+    </ZipCodeProvider>
   )
 }
 

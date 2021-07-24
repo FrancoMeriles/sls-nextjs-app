@@ -1,3 +1,5 @@
 export const ADD_FAVORITE = 'ADD_FAVORITE'
 export const REMOVE_FAVORITE = 'REMOVE_FAVORITE'
 export const BATCH_FAVORITES = 'BATCH_FAVORITES'
+
+export const SET_ZIPCODE = 'SET_ZIPCODE'

@@ -15,11 +15,13 @@ import {
   AlertDialogOverlay,
 } from '@chakra-ui/react'
 import { HeartOutline } from '@base/icons'
-import Search from '@base/components/Search'
 import { SearchIcon } from '@chakra-ui/icons'
+import Search from '@base/components/Search'
+import ZipCode from '@base/components/ZipCode'
 
 const Header = (props) => {
   const favorites = useFavorite()
+
   const router = useRouter()
 
   const gotoFavorite = () => {
@@ -29,7 +31,6 @@ const Header = (props) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const showSearch = () => (isOpen ? onClose() : onOpen())
   const cancelRef = React.useRef()
-
   return (
     <Flex
       as="nav"
@@ -41,12 +42,13 @@ const Header = (props) => {
       color="black.300"
       {...props}
     >
-      <Flex>
+      <Flex alignItems="center">
         <Link href="/">
           <a>
             <Image src="/assets/img/logoMeli.png" alt="Mercado Libre" width="134" height="34" />
           </a>
         </Link>
+        <ZipCode />
       </Flex>
 
       <Box display={{ base: 'none', md: 'block' }}>

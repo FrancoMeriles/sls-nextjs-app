@@ -1,4 +1,5 @@
 // General
+import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
 import { Container, Box, Grid, GridItem, Heading } from '@chakra-ui/react'
@@ -15,13 +16,15 @@ import ProductFeatures from '@base/components/ProductFeatures'
 import ProductDescription from '@base/components/ProductDescription'
 import ProductActions from '@base/components/ProductActions'
 
+// Context
+import { useZipCode } from '@base/contexts/ZipCode'
+
 // Serivces
 import LocalApi from '@base/service/local.service'
 
 const Index = ({
   product,
   productRated,
-  shippingOptions,
   productDescription,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   const {
@@ -38,6 +41,19 @@ const Index = ({
     attributes: producAttributes,
   } = product
   const { rating_average, rating_levels, reviews } = productRated
+  const zipCode = useZipCode()
+  const [shippingOptions, setShippingOptions] = useState(null)
+  useEffect(() => {
+    const localApi = new LocalApi()
+    const getShippingOptionsByZipCode = async () => {
+      const shippingOptions = await localApi.getShippingOptionsByProductIdAndZipCode(
+        String(id),
+        zipCode
+      )
+      setShippingOptions(shippingOptions)
+    }
+    getShippingOptionsByZipCode()
+  }, [zipCode, id])
 
   const images = pictures.map((picture) => ({
     original: picture.url,
@@ -86,7 +102,9 @@ const Index = ({
                   sumRatingsOpinions={sumRatingsOpinions}
                 />
                 <ContentPrice original_price={original_price} price={price} />
-                <ContentShippingOptions shippingOptions={shippingOptions} />
+                {shippingOptions ? (
+                  <ContentShippingOptions shippingOptions={shippingOptions} />
+                ) : null}
                 <ProductActions
                   available_quantity={available_quantity}
                   productId={id}
