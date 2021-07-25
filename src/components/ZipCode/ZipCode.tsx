@@ -27,7 +27,9 @@ const ZipCode = () => {
   const handleChange = (event) => setValue(event.target.value)
   const handleFormSubmit = (e) => {
     e.preventDefault()
-    dispatch(setZipCode(value))
+    if (value) {
+      dispatch(setZipCode(value))
+    }
     onClose()
   }
   return (

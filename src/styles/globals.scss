@@ -26,6 +26,9 @@ a {
   @include responsive(tablet) {
     height: 500px;
   }
+  @include responsive(phone) {
+    height: 350px;
+  }
 }
 
 .image-gallery-thumbnail {

@@ -11,13 +11,15 @@ const Search = ({ onClose }) => {
   const handleFormSubmit = (e) => {
     e.preventDefault()
     onClose()
-    router.push({
-      pathname: '/products',
-      query: {
-        q: value,
-        page: 1,
-      },
-    })
+    if (value) {
+      router.push({
+        pathname: '/products',
+        query: {
+          q: value,
+          page: 1,
+        },
+      })
+    }
   }
 
   return (

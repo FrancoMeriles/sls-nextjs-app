@@ -8,7 +8,7 @@ exports[`App should render and match snapshot with required props 1`] = `
     className="css-s13uex"
   >
     <div
-      className="chakra-linkbox css-10n1vic"
+      className="chakra-linkbox css-15wvuzs"
     >
       <a
         className="chakra-linkbox__overlay css-1hnz6hu"
@@ -16,20 +16,18 @@ exports[`App should render and match snapshot with required props 1`] = `
         onClick={[Function]}
         onMouseEnter={[Function]}
       >
-        <h3>
+        <p
+          className="chakra-text css-pelz90"
+        >
           __FIRST_NAME__
-        </h3>
+        </p>
         <span
-          style={
-            Object {
-              "backgroundColor": "hsl(214,100%,50%)",
-            }
-          }
+          className="css-1ksdfwg"
         />
       </a>
     </div>
     <div
-      className="chakra-linkbox css-10n1vic"
+      className="chakra-linkbox css-15wvuzs"
     >
       <a
         className="chakra-linkbox__overlay css-1hnz6hu"
@@ -37,15 +35,13 @@ exports[`App should render and match snapshot with required props 1`] = `
         onClick={[Function]}
         onMouseEnter={[Function]}
       >
-        <h3>
+        <p
+          className="chakra-text css-pelz90"
+        >
           __SECOND_NAME__
-        </h3>
+        </p>
         <span
-          style={
-            Object {
-              "backgroundColor": "hsl(214,100%,50%)",
-            }
-          }
+          className="css-1ksdfwg"
         />
       </a>
     </div>
