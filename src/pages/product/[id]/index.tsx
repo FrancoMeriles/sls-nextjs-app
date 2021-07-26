@@ -34,11 +34,10 @@ const Index = ({
     sold_quantity,
     original_price,
     price,
-    available_quantity,
     warranty,
     accepts_mercadopago,
     pictures,
-    attributes: producAttributes,
+    attributes: productAttributes,
   } = product
   const { rating_average, rating_levels, reviews } = productRated
   const zipCode = useZipCode()
@@ -59,7 +58,10 @@ const Index = ({
     original: picture.url,
     thumbnail: picture.url,
   }))
-  const sumRatingsOpinions = Object.values(rating_levels).reduce((a: number, b: number) => a + b, 0)
+  const sumRatingsOpinions = +Object.values(rating_levels).reduce(
+    (a: number, b: number) => a + b,
+    0
+  )
   return (
     <>
       <Head>
@@ -77,7 +79,7 @@ const Index = ({
                 thumbnailPosition={'left'}
               />
               <Box p={{ sm: 3, md: 10 }} mt={10}>
-                <ProductFeatures attributes={producAttributes} />
+                <ProductFeatures attributes={productAttributes} />
               </Box>
               <Box p={{ sm: 3, md: 10 }}>
                 <ProductDescription productDescription={productDescription} />
@@ -103,13 +105,9 @@ const Index = ({
                 />
                 <ContentPrice original_price={original_price} price={price} />
                 {shippingOptions ? (
-                  <ContentShippingOptions shippingOptions={shippingOptions} />
+                  <ContentShippingOptions options={shippingOptions.options} />
                 ) : null}
-                <ProductActions
-                  available_quantity={available_quantity}
-                  productId={id}
-                  product={product}
-                />
+                <ProductActions product={product} />
                 <ContentOptions warranty={warranty} accepts_mercadopago={accepts_mercadopago} />
               </Box>
             </GridItem>

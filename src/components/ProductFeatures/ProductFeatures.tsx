@@ -1,7 +1,19 @@
+import { FC } from 'react'
 import { Box, Grid, Flex, Divider, Text } from '@chakra-ui/react'
 import { Check } from '@base/icons'
 
-const ProductFeatures = ({ attributes }) => {
+interface ProductFeaturesProps {
+  attributes: AttributesProps
+}
+
+interface AttributesProps {
+  map: any
+  id: string
+  name: string
+  value_name: string
+}
+
+const ProductFeatures: FC<ProductFeaturesProps> = ({ attributes }) => {
   return (
     <>
       <Divider orientation="horizontal" />
@@ -9,8 +21,8 @@ const ProductFeatures = ({ attributes }) => {
         Características del producto
       </Text>
       <Grid templateColumns="repeat(2, 1fr)" gap={4} rowGap={8} mt={12}>
-        {attributes.map((attribute, id) => (
-          <Flex key={id} alignItems="center">
+        {attributes.map((attribute) => (
+          <Flex key={attribute.id} alignItems="center">
             <Check boxSize={9} bg="brand.gray" borderRadius="50px" mr={2} />
             <Box>
               <Text fontSize="sm" mr={2}>

@@ -1,3 +1,4 @@
+import { FC } from 'react'
 import {
   Box,
   Heading,
@@ -21,20 +22,34 @@ import { getPriceFormatted } from '@base/utils'
 import { useZipCode } from '@base/contexts/ZipCode'
 dayjs.locale('es')
 
-const ContentShippingOptions = ({ shippingOptions }) => {
+interface ContentShippingOptionsProps {
+  options: OptionsProps
+}
+
+interface OptionsProps {
+  find: any
+  display: string
+  shipping_option_type: string
+  name: string
+  cost: number
+  base_cost: number
+  estimated_delivery_time: {
+    date: string
+  }
+}
+
+const ContentShippingOptions: FC<ContentShippingOptionsProps> = ({ options }) => {
   const zipCode = useZipCode()
   const modalDevolution = useDisclosure()
   const modalDeliveryMethod = useDisclosure()
-  const { options } = shippingOptions
   const bestShippingOption = options.find(({ display }) => display === 'recommended')
   const allwaysShippingOption = options.find(
     ({ shipping_option_type }) => shipping_option_type === 'agency'
   )
-
-  const dateArrive = dayjs(bestShippingOption.estimated_delivery_time.date).format(
+  const bestArrive = dayjs(bestShippingOption.estimated_delivery_time.date).format(
     'dddd D [de] MMMM'
   )
-  const dateArrive2 = dayjs(allwaysShippingOption.estimated_delivery_time.date).format(
+  const agencyArrive = dayjs(allwaysShippingOption.estimated_delivery_time.date).format(
     'dddd D [de] MMMM'
   )
   return (
@@ -46,13 +61,13 @@ const ContentShippingOptions = ({ shippingOptions }) => {
         <Box>
           {bestShippingOption.cost === 0 ? (
             <Text fontSize="sm" color="brand.200">
-              Llega gratis <chakra.span fontWeight="semibold">el {dateArrive}</chakra.span>
+              Llega gratis <chakra.span fontWeight="semibold">el {bestArrive}</chakra.span>
             </Text>
           ) : (
             <Text fontSize="sm">
               Llega{' '}
               <chakra.span fontWeight="semibold" color="brand.200">
-                el {dateArrive}
+                el {bestArrive}
               </chakra.span>{' '}
               por {getPriceFormatted(bestShippingOption.base_cost)}
             </Text>
@@ -176,7 +191,7 @@ const ContentShippingOptions = ({ shippingOptions }) => {
               </Text>
               <Flex justifyContent="space-between" p="30px 0">
                 <Text>
-                  Llega el <chakra.b>{dateArrive}</chakra.b> a tu dirección
+                  Llega el <chakra.b>{bestArrive}</chakra.b> a tu dirección
                 </Text>
                 {bestShippingOption.cost === 0 ? (
                   <Text fontSize="md" color="brand.200">
@@ -194,7 +209,7 @@ const ContentShippingOptions = ({ shippingOptions }) => {
               </Text>
               <Flex justifyContent="space-between" p="30px 0">
                 <Text>
-                  Retiralo a partir del <chakra.b>{dateArrive2}</chakra.b> en correos
+                  Retiralo a partir del <chakra.b>{agencyArrive}</chakra.b> en correos
                 </Text>
                 {allwaysShippingOption.cost === 0 ? (
                   <Text fontSize="md" color="brand.200">

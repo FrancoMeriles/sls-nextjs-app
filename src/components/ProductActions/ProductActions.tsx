@@ -1,3 +1,4 @@
+import { FC } from 'react'
 import { Box, Button, Text } from '@chakra-ui/react'
 
 // Context and Actions
@@ -10,7 +11,17 @@ import { HeartFull, HeartOutline } from '@base/icons'
 // Utils
 import { checkIfProductExistInFavorite } from '@base/utils'
 
-const ProductActions = ({ available_quantity, productId, product }) => {
+interface ProductActionsProps {
+  product: ProductProps
+}
+
+interface ProductProps {
+  available_quantity: number
+  id: string
+}
+
+const ProductActions: FC<ProductActionsProps> = ({ product }) => {
+  const { available_quantity, id } = product
   const favorites = useFavorite()
   const dispatch = useDispatchFavorite()
   return (
@@ -22,12 +33,12 @@ const ProductActions = ({ available_quantity, productId, product }) => {
         Comprar ahora
       </Button>
 
-      {checkIfProductExistInFavorite(favorites, productId) ? (
+      {checkIfProductExistInFavorite(favorites, id) ? (
         <Button
           w="100%"
           size="lg"
           mt={2}
-          onClick={() => dispatch(removeFavorite(productId))}
+          onClick={() => dispatch(removeFavorite(id))}
           rightIcon={<HeartFull />}
           colorScheme="brand"
           variant="outline"

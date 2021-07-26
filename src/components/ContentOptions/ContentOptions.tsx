@@ -1,7 +1,13 @@
+import { FC } from 'react'
 import { Shield, Warranty } from '@base/icons'
 import { Box, Flex, Text, chakra } from '@chakra-ui/react'
 
-const ContentOptions = ({ warranty, accepts_mercadopago }) => {
+interface ContentOptionsProps {
+  warranty: string
+  accepts_mercadopago: boolean
+}
+
+const ContentOptions: FC<ContentOptionsProps> = ({ warranty, accepts_mercadopago }) => {
   return (
     <Box>
       {warranty && (

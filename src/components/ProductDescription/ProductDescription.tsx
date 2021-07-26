@@ -1,6 +1,15 @@
+import { FC } from 'react'
 import { Divider, Text } from '@chakra-ui/react'
 
-const ProductDescription = ({ productDescription }) => {
+interface ProductDescriptionProps {
+  productDescription: ProductProps
+}
+
+interface ProductProps {
+  plain_text: string
+}
+
+const ProductDescription: FC<ProductDescriptionProps> = ({ productDescription }) => {
   return (
     <>
       <Divider orientation="horizontal" />

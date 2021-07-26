@@ -1,6 +1,12 @@
+import { FC } from 'react'
 import { Box, Heading, Image } from '@chakra-ui/react'
 
-const CategorieHeader = ({ name, picture }) => {
+interface CategorieHeaderProps {
+  name: string
+  picture: string
+}
+
+const CategorieHeader: FC<CategorieHeaderProps> = ({ name, picture }) => {
   return (
     <Box
       display="flex"

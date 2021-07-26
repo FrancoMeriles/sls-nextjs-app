@@ -20,9 +20,9 @@ const Index = ({
       <Container maxW="container.lg" paddingTop={5}>
         <CategorieHeader name={categorie.name} picture={categorie.picture} />
         <Grid templateColumns="repeat(auto-fill, minmax(230px, 1fr))" gap={5} pt={5} pb={5}>
-          {products.map((product) => {
-            return <Card key={product.id} {...product} />
-          })}
+          {products.map((product) => (
+            <Card key={product.id} {...product} />
+          ))}
         </Grid>
         <Pager url={`/categorie/${categorieId}/products`} />
       </Container>

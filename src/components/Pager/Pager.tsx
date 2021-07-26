@@ -1,7 +1,12 @@
+import { FC } from 'react'
 import { Container, Button, Tag } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 
-const Pager = ({ url }) => {
+interface PagerProps {
+  url: string
+}
+
+const Pager: FC<PagerProps> = ({ url }) => {
   const router = useRouter()
   const { page } = router.query
 

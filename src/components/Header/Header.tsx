@@ -19,7 +19,7 @@ import { SearchIcon } from '@chakra-ui/icons'
 import Search from '@base/components/Search'
 import ZipCode from '@base/components/ZipCode'
 
-const Header = (props) => {
+const Header = () => {
   const favorites = useFavorite()
 
   const router = useRouter()
@@ -40,7 +40,6 @@ const Header = (props) => {
       padding={6}
       bg="brand.100"
       color="black.300"
-      {...props}
     >
       <Flex alignItems="center">
         <Link href="/">

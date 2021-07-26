@@ -1,7 +1,13 @@
+import { FC } from 'react'
 import { getPriceFormatted, getPriceRound } from '@base/utils'
 import { Box, Text, Stat, StatNumber, Tag } from '@chakra-ui/react'
 
-const ContentPrice = ({ original_price, price }) => {
+interface ContentPriceProps {
+  original_price: number
+  price: number
+}
+
+const ContentPrice: FC<ContentPriceProps> = ({ original_price, price }) => {
   return (
     <>
       <Text as="del" fontSize="sm" color="gray.500" mt={3} d="block">

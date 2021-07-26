@@ -1,7 +1,13 @@
+import { FC } from 'react'
 import { Flex, Text } from '@chakra-ui/react'
 import RatedStar from '../RatedStar'
 
-const ProductRated = ({ ratingAverage, sumRatingsOpinions }) => {
+interface ProductRatedProps {
+  ratingAverage: number
+  sumRatingsOpinions: number
+}
+
+const ProductRated: FC<ProductRatedProps> = ({ ratingAverage, sumRatingsOpinions }) => {
   return ratingAverage ? (
     <Flex alignItems="center" mt={3}>
       <RatedStar rateAverage={ratingAverage} boxSize={4} />

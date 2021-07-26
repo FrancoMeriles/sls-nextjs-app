@@ -1,8 +1,22 @@
+import { FC } from 'react'
 import { Box, Text, Flex } from '@chakra-ui/react'
 import { Thumbs } from '@base/icons'
 import RatedStar from '@base/components/RatedStar'
 
-const ReviewProductItem = ({ review }) => {
+interface ReviewProductItemProps {
+  review: ReviewInterface
+}
+
+interface ReviewInterface {
+  id: number
+  rate: number
+  title: string
+  content: string
+  likes: number
+  dislikes: number
+}
+
+const ReviewProductItem: FC<ReviewProductItemProps> = ({ review }) => {
   return (
     <Box mt={4} mb={6}>
       <RatedStar rateAverage={review.rate} boxSize={4} />

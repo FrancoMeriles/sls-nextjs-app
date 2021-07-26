@@ -1,9 +1,14 @@
+import { FC } from 'react'
 import React from 'react'
 import { Button, Input, InputGroup, InputRightElement } from '@chakra-ui/react'
 import { SearchIcon } from '@chakra-ui/icons'
 import { useRouter } from 'next/router'
 
-const Search = ({ onClose }) => {
+interface SearchProps {
+  onClose(): void
+}
+
+const Search: FC<SearchProps> = ({ onClose }) => {
   const router = useRouter()
   const [value, setValue] = React.useState('')
   const handleChange = (event) => setValue(event.target.value)

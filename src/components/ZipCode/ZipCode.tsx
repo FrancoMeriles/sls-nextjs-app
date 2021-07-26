@@ -22,16 +22,20 @@ const ZipCode = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const zipCode = useZipCode()
   const dispatch = useDispatchZipCode()
-
   const [value, setValue] = React.useState('')
-  const handleChange = (event) => setValue(event.target.value)
-  const handleFormSubmit = (e) => {
+
+  const handleChange = (e: React.FormEvent<EventTarget>): void => {
+    const target = e.target as HTMLInputElement
+    setValue(target.value)
+  }
+  const handleFormSubmit = (e: React.FormEvent<EventTarget>): void => {
     e.preventDefault()
     if (value) {
       dispatch(setZipCode(value))
     }
     onClose()
   }
+
   return (
     <Popover isOpen={isOpen} onOpen={onOpen} onClose={onClose}>
       <PopoverTrigger>

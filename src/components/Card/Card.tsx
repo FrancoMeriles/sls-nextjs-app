@@ -1,3 +1,4 @@
+import { FC } from 'react'
 import { LinkBox, LinkOverlay, Image, Box, Text, Stat, StatNumber, Tag } from '@chakra-ui/react'
 import NextLink from 'next/link'
 
@@ -6,7 +7,20 @@ import { addFavorite, removeFavorite } from '@base/contexts/actions/favorites'
 import { useDispatchFavorite, useFavorite } from '@base/contexts/Favorite'
 import { HeartFull, HeartOutline } from '@base/icons'
 
-const Card = (product) => {
+interface ShippingProps {
+  free_shipping: boolean
+}
+
+interface CardProps {
+  id: string
+  title: string
+  thumbnail: string
+  price: number
+  shipping: ShippingProps
+  original_price?: number
+}
+
+const Card: FC<CardProps> = (product) => {
   const { id, title, thumbnail, price, shipping, original_price } = product
   const favorites = useFavorite()
   const dispatch = useDispatchFavorite()

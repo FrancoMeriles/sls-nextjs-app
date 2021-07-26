@@ -1,8 +1,14 @@
+import { FC } from 'react'
 import { Box } from '@chakra-ui/react'
 import { getStarsToRate } from '@base/utils'
 import { Star } from '@base/icons'
 
-const RatedStar = ({ rateAverage, boxSize }) => {
+interface RatedStarProps {
+  rateAverage: number
+  boxSize: number
+}
+
+const RatedStar: FC<RatedStarProps> = ({ rateAverage, boxSize }) => {
   const rates = getStarsToRate(rateAverage)
   return (
     <Box>
