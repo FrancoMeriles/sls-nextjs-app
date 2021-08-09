@@ -1,0 +1,282 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReviewProductHeader should render and match snapshot with required props 1`] = `
+Array [
+  <hr
+    aria-orientation="horizontal"
+    className="chakra-divider css-1upb9tn"
+  />,
+  <p
+    className="chakra-text css-1hlj7v5"
+  >
+    Opiniones sobre el producto
+  </p>,
+  <div
+    className="css-pss9jm"
+  >
+    <div
+      className="css-139sjt4"
+    >
+      <p
+        className="chakra-text css-9j8q24"
+      >
+        3.8
+      </p>
+      <div
+        className="css-0"
+      >
+        <svg
+          className="chakra-icon css-3ii9cw"
+          focusable={false}
+          paint="full"
+          viewBox="0 0 10 10"
+        >
+          <path
+            d="M5.056 8L1.931 9.648l.597-3.49L0 3.684l3.494-.509L5.056 0l1.562 3.176 3.494.51-2.528 2.471.597 3.491z"
+            fill="currentColor"
+          />
+        </svg>
+        <svg
+          className="chakra-icon css-3ii9cw"
+          focusable={false}
+          paint="full"
+          viewBox="0 0 10 10"
+        >
+          <path
+            d="M5.056 8L1.931 9.648l.597-3.49L0 3.684l3.494-.509L5.056 0l1.562 3.176 3.494.51-2.528 2.471.597 3.491z"
+            fill="currentColor"
+          />
+        </svg>
+        <svg
+          className="chakra-icon css-3ii9cw"
+          focusable={false}
+          paint="full"
+          viewBox="0 0 10 10"
+        >
+          <path
+            d="M5.056 8L1.931 9.648l.597-3.49L0 3.684l3.494-.509L5.056 0l1.562 3.176 3.494.51-2.528 2.471.597 3.491z"
+            fill="currentColor"
+          />
+        </svg>
+        <svg
+          className="chakra-icon css-3ii9cw"
+          focusable={false}
+          paint="half"
+          viewBox="0 0 10 10"
+        >
+          <g
+            fill="none"
+            fillRule="evenodd"
+          >
+            <path
+              d="M5.256 8L2.131 9.648l.597-3.49L.2 3.684l3.494-.509L5.256 0l1.562 3.176 3.494.51-2.528 2.471.597 3.491z"
+              fill="#e0e0e0"
+            />
+            <path
+              d="M5.272 8.026L2.137 9.679l.6-3.502L.2 3.697l3.505-.51L5.272 0z"
+              fill="currentColor"
+            />
+          </g>
+        </svg>
+        <svg
+          className="chakra-icon css-3ii9cw"
+          focusable={false}
+          paint="empty"
+          viewBox="0 0 10 10"
+        >
+          <path
+            d="M5.056 8L1.931 9.648l.597-3.49L0 3.684l3.494-.509L5.056 0l1.562 3.176 3.494.51-2.528 2.471.597 3.491z"
+            fill="#e0e0e0"
+          />
+        </svg>
+      </div>
+      <p
+        className="chakra-text css-1daurj3"
+      >
+        Promedio entre 
+        4
+         opiniones
+      </p>
+    </div>
+    <div
+      className="css-1r4umpa"
+    >
+      <div
+        className="chakra-stack css-hvy9jy"
+      >
+        <p
+          className="chakra-text css-x8wdze"
+        >
+          5
+           estrellas
+        </p>
+        <div
+          className="css-1nbic85"
+        >
+          <div
+            className="css-kdwx3d"
+          >
+            <div
+              aria-valuemax={100}
+              aria-valuemin={0}
+              aria-valuenow={0}
+              className="css-1jy0d03"
+              role="progressbar"
+              style={
+                Object {
+                  "width": "0%",
+                }
+              }
+            />
+          </div>
+        </div>
+        <p
+          className="chakra-text css-1foer2f"
+        >
+          0
+        </p>
+      </div>
+      <div
+        className="chakra-stack css-hvy9jy"
+      >
+        <p
+          className="chakra-text css-x8wdze"
+        >
+          4
+           estrellas
+        </p>
+        <div
+          className="css-1nbic85"
+        >
+          <div
+            className="css-kdwx3d"
+          >
+            <div
+              aria-valuemax={100}
+              aria-valuemin={0}
+              aria-valuenow={175}
+              className="css-1jy0d03"
+              role="progressbar"
+              style={
+                Object {
+                  "width": "175%",
+                }
+              }
+            />
+          </div>
+        </div>
+        <p
+          className="chakra-text css-1foer2f"
+        >
+          7
+        </p>
+      </div>
+      <div
+        className="chakra-stack css-hvy9jy"
+      >
+        <p
+          className="chakra-text css-x8wdze"
+        >
+          3
+           estrellas
+        </p>
+        <div
+          className="css-1nbic85"
+        >
+          <div
+            className="css-kdwx3d"
+          >
+            <div
+              aria-valuemax={100}
+              aria-valuemin={0}
+              aria-valuenow={225}
+              className="css-1jy0d03"
+              role="progressbar"
+              style={
+                Object {
+                  "width": "225%",
+                }
+              }
+            />
+          </div>
+        </div>
+        <p
+          className="chakra-text css-1foer2f"
+        >
+          9
+        </p>
+      </div>
+      <div
+        className="chakra-stack css-hvy9jy"
+      >
+        <p
+          className="chakra-text css-x8wdze"
+        >
+          2
+           estrellas
+        </p>
+        <div
+          className="css-1nbic85"
+        >
+          <div
+            className="css-kdwx3d"
+          >
+            <div
+              aria-valuemax={100}
+              aria-valuemin={0}
+              aria-valuenow={75}
+              className="css-1jy0d03"
+              role="progressbar"
+              style={
+                Object {
+                  "width": "75%",
+                }
+              }
+            />
+          </div>
+        </div>
+        <p
+          className="chakra-text css-1foer2f"
+        >
+          3
+        </p>
+      </div>
+      <div
+        className="chakra-stack css-hvy9jy"
+      >
+        <p
+          className="chakra-text css-x8wdze"
+        >
+          1
+           estrellas
+        </p>
+        <div
+          className="css-1nbic85"
+        >
+          <div
+            className="css-kdwx3d"
+          >
+            <div
+              aria-valuemax={100}
+              aria-valuemin={0}
+              aria-valuenow={125}
+              className="css-1jy0d03"
+              role="progressbar"
+              style={
+                Object {
+                  "width": "125%",
+                }
+              }
+            />
+          </div>
+        </div>
+        <p
+          className="chakra-text css-1foer2f"
+        >
+          5
+        </p>
+      </div>
+    </div>
+  </div>,
+]
+`;

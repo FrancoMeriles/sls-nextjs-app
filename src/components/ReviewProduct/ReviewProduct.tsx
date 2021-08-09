@@ -4,15 +4,13 @@ import ReviewProductItem from '@base/components/ReviewProductItem'
 import ReviewProductHeader from '@base/components/ReviewProductHeader'
 
 interface ReviewProductProps {
-  allReviews: ReviewInterface
+  allReviews: ReviewInterface[]
   ratingAverage: number
   sumRatingsOpinions: number
   ratingLevels: RatingLevelsInterface
 }
 
 interface ReviewInterface {
-  map: any
-  filter: any
   id: number
   rate: number
   title: string

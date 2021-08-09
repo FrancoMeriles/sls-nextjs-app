@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductDescription should render and match snapshot with required props 1`] = `
+Array [
+  <hr
+    aria-orientation="horizontal"
+    className="chakra-divider css-1upb9tn"
+  />,
+  <p
+    className="chakra-text css-1hlj7v5"
+  >
+    Descripción
+  </p>,
+  <p
+    className="chakra-text css-1hqh23w"
+  >
+    __LOREM_IPSUM_DOLOR__
+  </p>,
+]
+`;

@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer should render and match snapshot with required props 1`] = `
+<div
+  className="css-3c83ig"
+>
+  <p
+    className="chakra-text css-19z3xop"
+  >
+    Copyright © 1999-2021 MercadoLibre S.R.L.
+  </p>
+</div>
+`;

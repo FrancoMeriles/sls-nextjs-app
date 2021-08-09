@@ -3,11 +3,10 @@ import { Box, Grid, Flex, Divider, Text } from '@chakra-ui/react'
 import { Check } from '@base/icons'
 
 interface ProductFeaturesProps {
-  attributes: AttributesProps
+  attributes: AttributesProps[]
 }
 
 interface AttributesProps {
-  map: any
   id: string
   name: string
   value_name: string

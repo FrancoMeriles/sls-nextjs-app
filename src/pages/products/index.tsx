@@ -17,7 +17,7 @@ const Index = ({ results }: InferGetServerSidePropsType<typeof getServerSideProp
       <Container maxW="container.lg" paddingTop={5}>
         <Grid templateColumns="repeat(auto-fill, minmax(230px, 1fr))" gap={5} pt={5} pb={5}>
           {results.map((product) => (
-            <Card key={product.id} {...product} />
+            <Card key={product.id} product={product} />
           ))}
         </Grid>
         <Pager url={`/products`} />

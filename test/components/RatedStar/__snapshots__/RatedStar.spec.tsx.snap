@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RatedStar should render and match snapshot with required props 1`] = `
+<div
+  className="css-0"
+>
+  <svg
+    className="chakra-icon css-q1ives"
+    focusable={false}
+    paint="full"
+    viewBox="0 0 10 10"
+  >
+    <path
+      d="M5.056 8L1.931 9.648l.597-3.49L0 3.684l3.494-.509L5.056 0l1.562 3.176 3.494.51-2.528 2.471.597 3.491z"
+      fill="currentColor"
+    />
+  </svg>
+  <svg
+    className="chakra-icon css-q1ives"
+    focusable={false}
+    paint="full"
+    viewBox="0 0 10 10"
+  >
+    <path
+      d="M5.056 8L1.931 9.648l.597-3.49L0 3.684l3.494-.509L5.056 0l1.562 3.176 3.494.51-2.528 2.471.597 3.491z"
+      fill="currentColor"
+    />
+  </svg>
+  <svg
+    className="chakra-icon css-q1ives"
+    focusable={false}
+    paint="full"
+    viewBox="0 0 10 10"
+  >
+    <path
+      d="M5.056 8L1.931 9.648l.597-3.49L0 3.684l3.494-.509L5.056 0l1.562 3.176 3.494.51-2.528 2.471.597 3.491z"
+      fill="currentColor"
+    />
+  </svg>
+  <svg
+    className="chakra-icon css-q1ives"
+    focusable={false}
+    paint="half"
+    viewBox="0 0 10 10"
+  >
+    <g
+      fill="none"
+      fillRule="evenodd"
+    >
+      <path
+        d="M5.256 8L2.131 9.648l.597-3.49L.2 3.684l3.494-.509L5.256 0l1.562 3.176 3.494.51-2.528 2.471.597 3.491z"
+        fill="#e0e0e0"
+      />
+      <path
+        d="M5.272 8.026L2.137 9.679l.6-3.502L.2 3.697l3.505-.51L5.272 0z"
+        fill="currentColor"
+      />
+    </g>
+  </svg>
+  <svg
+    className="chakra-icon css-q1ives"
+    focusable={false}
+    paint="empty"
+    viewBox="0 0 10 10"
+  >
+    <path
+      d="M5.056 8L1.931 9.648l.597-3.49L0 3.684l3.494-.509L5.056 0l1.562 3.176 3.494.51-2.528 2.471.597 3.491z"
+      fill="#e0e0e0"
+    />
+  </svg>
+</div>
+`;

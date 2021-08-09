@@ -21,7 +21,6 @@ import ZipCode from '@base/components/ZipCode'
 
 const Header = () => {
   const favorites = useFavorite()
-
   const router = useRouter()
 
   const gotoFavorite = () => {
@@ -57,7 +56,7 @@ const Header = () => {
         <Box display={{ base: 'block', md: 'none' }} cursor="pointer" onClick={showSearch} mr={5}>
           <SearchIcon boxSize={5} />
         </Box>
-        <Box pos="relative" cursor="pointer" onClick={gotoFavorite}>
+        <Box pos="relative" cursor="pointer" onClick={gotoFavorite} data-testid="go-to-favorite">
           <HeartOutline boxSize={5} />
           <Badge colorScheme="red" borderRadius="50px" pos="absolute" right="-11" top="-2">
             {favorites.length}

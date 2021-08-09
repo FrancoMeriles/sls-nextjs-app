@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContentOptions should render and match snapshot with required props 1`] = `
+<div
+  className="css-0"
+>
+  <div
+    className="css-kkyj92"
+  >
+    <svg
+      className="chakra-icon css-xrqln0"
+      focusable={false}
+      viewBox="0 0 12 14"
+    >
+      <path
+        d="M5.305 10.354l-1.686 3.34-1.24-2.458H0l1.64-3.202a5.2 5.2 0 1 1 8.588.194l1.54 3.008H9.39l-1.241 2.458-1.673-3.315a5.266 5.266 0 0 1-1.171-.025zm-1.001-.237a5.201 5.201 0 0 1-1.975-1.234l-.693 1.353h1.357l.626 1.239.685-1.358zm3.192.064l.653 1.294.625-1.239h1.358l-.617-1.204a5.193 5.193 0 0 1-2.019 1.15zM6 9.2a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"
+        fill="currentColor"
+        fillRule="nonzero"
+      />
+    </svg>
+    <p
+      className="chakra-text css-5ft5pb"
+    >
+      __WARRANTY__
+    </p>
+  </div>
+  <div
+    className="css-1n0zz00"
+  >
+    <svg
+      className="chakra-icon css-xrqln0"
+      focusable={false}
+      viewBox="0 0 14 15"
+    >
+      <path
+        d="M.399 3.89v-.6h.6c1.87 0 3.76-.783 5.68-2.374l.383-.317.383.317c1.92 1.59 3.81 2.374 5.68 2.374h.6v.6c0 5.633-2.165 9.242-6.473 10.679l-.19.063-.19-.063C2.564 13.132.4 9.523.4 3.89zm6.663-1.743c-1.8 1.4-3.62 2.179-5.455 2.32.135 4.725 1.947 7.648 5.455 8.898 3.508-1.25 5.32-4.173 5.455-8.898-1.835-.141-3.656-.92-5.455-2.32zm-.905 6.477l3.191-3.582.896.798-4.02 4.513-2.472-2.377.831-.865 1.574 1.513z"
+        fill="currentColor"
+        fillRule="nonzero"
+      />
+    </svg>
+    <p
+      className="chakra-text css-5ft5pb"
+    >
+      <span
+        className="css-umuusw"
+      >
+        Compra Protegida
+      </span>
+      , recibí el producto que esperabas o te devolvemos tu dinero.
+    </p>
+  </div>
+</div>
+`;

@@ -11,9 +11,12 @@ interface SearchProps {
 const Search: FC<SearchProps> = ({ onClose }) => {
   const router = useRouter()
   const [value, setValue] = React.useState('')
-  const handleChange = (event) => setValue(event.target.value)
+  const handleChange = (e: React.FormEvent<EventTarget>) => {
+    const target = e.target as HTMLInputElement
+    setValue(target.value)
+  }
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = (e: React.FormEvent<EventTarget>) => {
     e.preventDefault()
     onClose()
     if (value) {
@@ -42,7 +45,7 @@ const Search: FC<SearchProps> = ({ onClose }) => {
         <InputRightElement
           height="100%"
           children={
-            <Button type="submit" height="100%" variant="link">
+            <Button role="button" type="submit" height="100%" variant="link">
               <SearchIcon color="black.500" />
             </Button>
           }

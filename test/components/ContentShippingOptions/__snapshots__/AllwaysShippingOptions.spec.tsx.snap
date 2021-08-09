@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DevolutionShippingOptions should render and match snapshot with required props 1`] = `
+<div
+  className="css-1kowmw4"
+>
+  <div
+    className="css-1pla5ih"
+  >
+    <svg
+      className="chakra-icon css-me87sc"
+      focusable={false}
+      viewBox="0 0 14 12"
+    >
+      <path
+        d="M2.474 7.2h7.225a2.7 2.7 0 1 0 0-5.4H7V.6h2.7a3.9 3.9 0 1 1 0 7.8H2.473l2.45 2.389-.839.859L.14 7.8l3.945-3.848.838.859L2.473 7.2z"
+        fill="currentColor"
+      />
+    </svg>
+  </div>
+  <div
+    className="css-0"
+  >
+    <p
+      className="chakra-text css-10wnejt"
+    >
+      Devolución gratis
+    </p>
+    <p
+      className="chakra-text css-1bmfkgj"
+    >
+      Tenés 30 días desde que lo recibís.
+    </p>
+    <button
+      className="chakra-button css-1wd94o"
+      onClick={[MockFunction]}
+      type="button"
+    >
+      Conocer más
+    </button>
+  </div>
+</div>
+`;

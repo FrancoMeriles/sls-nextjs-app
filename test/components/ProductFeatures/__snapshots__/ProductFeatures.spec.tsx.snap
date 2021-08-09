@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductFeatures should render and match snapshot with required props 1`] = `
+Array [
+  <hr
+    aria-orientation="horizontal"
+    className="chakra-divider css-1upb9tn"
+  />,
+  <p
+    className="chakra-text css-1hlj7v5"
+  >
+    Características del producto
+  </p>,
+  <div
+    className="css-8rdblo"
+  >
+    <div
+      className="css-70qvj9"
+    >
+      <svg
+        className="chakra-icon css-1ypeky3"
+        focusable={false}
+        viewBox="0 0 32 32"
+      >
+        <path
+          d="M16 8.85c1.593 0 3.064.521 4.253 1.402l-.962.91A5.851 5.851 0 1016 21.85a5.851 5.851 0 005.772-6.808l1.096-1.038A7.15 7.15 0 1116 8.85zm5.642 1.89l1.028 1.028-6.69 6.703-3.18-3.18 1.029-1.03 2.152 2.153 5.66-5.675z"
+          fill="currentColor"
+          fillRule="nonzero"
+        />
+      </svg>
+      <div
+        className="css-0"
+      >
+        <p
+          className="chakra-text css-6ru19t"
+        >
+          __NAME_1__
+          :
+        </p>
+        <p
+          className="chakra-text css-17vgcs5"
+        >
+          __NAME_1__
+        </p>
+      </div>
+    </div>
+    <div
+      className="css-70qvj9"
+    >
+      <svg
+        className="chakra-icon css-1ypeky3"
+        focusable={false}
+        viewBox="0 0 32 32"
+      >
+        <path
+          d="M16 8.85c1.593 0 3.064.521 4.253 1.402l-.962.91A5.851 5.851 0 1016 21.85a5.851 5.851 0 005.772-6.808l1.096-1.038A7.15 7.15 0 1116 8.85zm5.642 1.89l1.028 1.028-6.69 6.703-3.18-3.18 1.029-1.03 2.152 2.153 5.66-5.675z"
+          fill="currentColor"
+          fillRule="nonzero"
+        />
+      </svg>
+      <div
+        className="css-0"
+      >
+        <p
+          className="chakra-text css-6ru19t"
+        >
+          __NAME_2__
+          :
+        </p>
+        <p
+          className="chakra-text css-17vgcs5"
+        >
+          __NAME_2__
+        </p>
+      </div>
+    </div>
+  </div>,
+]
+`;

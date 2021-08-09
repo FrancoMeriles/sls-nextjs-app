@@ -50,6 +50,8 @@ module.exports = {
 
         'react/no-children-prop': 'off',
 
+        'react/display-name': 'off',
+
         // This rule is not compatible with Next.js's <Link /> components
         'jsx-a11y/anchor-is-valid': 'off',
 

@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CategorieCard should render and match snapshot with required props 1`] = `
+<div
+  className="chakra-linkbox css-15wvuzs"
+>
+  <a
+    className="chakra-linkbox__overlay css-1hnz6hu"
+    href="/categorie/__ID__/products?page=1"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    <p
+      className="chakra-text css-pelz90"
+    >
+      __NAME__
+    </p>
+    <span
+      className="css-1ksdfwg"
+    />
+  </a>
+</div>
+`;

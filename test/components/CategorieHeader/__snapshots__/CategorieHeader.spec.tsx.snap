@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CategorieHeader should render and match snapshot with required props 1`] = `
+<div
+  className="css-iciaa1"
+>
+  <h1
+    className="chakra-heading css-1sugwtq"
+  >
+    __NAME__
+  </h1>
+  <img
+    alt="__NAME__"
+    className="chakra-image__placeholder css-8sjrrl"
+  />
+</div>
+`;

@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BestShippingOptionOptions should render and match snapshot with required props 1`] = `
+<div
+  className="css-1kowmw4"
+>
+  <div
+    className="css-1pla5ih"
+  >
+    <svg
+      className="chakra-icon css-onkibi"
+      focusable={false}
+      viewBox="0 0 18 15"
+    >
+      <path
+        d="M7.763 12.207a2.398 2.398 0 0 1-4.726 0H1.8a1.8 1.8 0 0 1-1.8-1.8V2.195a1.8 1.8 0 0 1 1.8-1.8h8.445a1.8 1.8 0 0 1 1.8 1.8v.568l3.322.035L18 6.821v5.386h-2.394a2.398 2.398 0 0 1-4.727 0H7.763zm-.1-1.2h3.182V2.195a.6.6 0 0 0-.6-.6H1.8a.6.6 0 0 0-.6.6v8.212a.6.6 0 0 0 .6.6h1.337a2.399 2.399 0 0 1 4.526 0zm7.843 0H16.8V7.179l-2.086-3.187-2.669-.029v5.76a2.399 2.399 0 0 1 3.461 1.284zm-2.263 1.99a1.198 1.198 0 1 0 0-2.395 1.198 1.198 0 0 0 0 2.396zm-7.843 0a1.198 1.198 0 1 0 0-2.395 1.198 1.198 0 0 0 0 2.396z"
+        fill="currentColor"
+        fillRule="nonzero"
+      />
+    </svg>
+  </div>
+  <div
+    className="css-0"
+  >
+    <p
+      className="chakra-text css-g5hezf"
+    >
+      Llega
+       
+      <span
+        className="css-1ts511b"
+      >
+        el 
+        martes 3 de agosto
+      </span>
+       
+      por 
+      $ 600,00
+    </p>
+    <p
+      className="chakra-text css-1bmfkgj"
+    >
+      Beneficio Mercado Puntos
+    </p>
+    <button
+      className="chakra-button css-1wd94o"
+      onClick={[MockFunction]}
+      type="button"
+    >
+      Ver más formas de entrega
+    </button>
+  </div>
+</div>
+`;

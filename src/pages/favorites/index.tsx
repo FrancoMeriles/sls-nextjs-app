@@ -15,7 +15,7 @@ const Index = () => {
           {favorites &&
             favorites.map((product) => (
               <GridItem colSpan={[4, 2, 2, 1]} key={product.id}>
-                <Card {...product} colSpan />
+                <Card product={product} />
               </GridItem>
             ))}
         </Grid>

@@ -7,20 +7,23 @@ import { addFavorite, removeFavorite } from '@base/contexts/actions/favorites'
 import { useDispatchFavorite, useFavorite } from '@base/contexts/Favorite'
 import { HeartFull, HeartOutline } from '@base/icons'
 
-interface ShippingProps {
+interface ShippingInterface {
   free_shipping: boolean
 }
 
-interface CardProps {
+interface ProductInterface {
   id: string
   title: string
   thumbnail: string
   price: number
-  shipping: ShippingProps
+  shipping: ShippingInterface
   original_price?: number
 }
+interface ProductProps {
+  product: ProductInterface
+}
 
-const Card: FC<CardProps> = (product) => {
+const Card: FC<ProductProps> = ({ product }) => {
   const { id, title, thumbnail, price, shipping, original_price } = product
   const favorites = useFavorite()
   const dispatch = useDispatchFavorite()

@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pager should render and match snapshot with required props 1`] = `
+<div
+  align="center"
+  className="chakra-container css-1qput4s"
+>
+  <button
+    className="chakra-button css-omeai"
+    disabled={true}
+    onClick={[Function]}
+    type="button"
+  >
+    Anterior
+  </button>
+  <span
+    className="css-1aj5j9v"
+  >
+    1
+  </span>
+  <button
+    className="chakra-button css-omeai"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    Siguiente
+  </button>
+</div>
+`;

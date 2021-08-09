@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContentPrice should render and match snapshot with required props 1`] = `
+Array [
+  <del
+    className="chakra-text css-1njsmg6"
+  >
+    <p>
+      $ 1.000,00
+    </p>
+  </del>,
+  <div
+    className="chakra-stat css-1pdpmw6"
+  >
+    <dl>
+      <div
+        className="css-k008qs"
+      >
+        <dd
+          className="chakra-stat__number css-wp3asv"
+        >
+          $ 900,00
+        </dd>
+        <span
+          className="css-118lf1r"
+        >
+          10
+           %OFF
+        </span>
+      </div>
+    </dl>
+  </div>,
+]
+`;
