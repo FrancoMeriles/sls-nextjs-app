@@ -1,3 +1,4 @@
+import 'mocks'
 import { useEffect, useState } from 'react'
 import { ChakraProvider, Box } from '@chakra-ui/react'
 import theme from '@base/styles/theme'
