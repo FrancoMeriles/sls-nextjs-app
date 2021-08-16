@@ -23,27 +23,54 @@ In this project im using:
 
 ### Structure
 
-```
-└── cypress
-│   └── fixtures
-│   └── integration
-│   └── plugins
-│   └── support
-└── src
-│   └── assets
-│   └── axios
-│   └── components
-│   └── containers
-│   └── scss
-│   └── ui
-│   └── util
-│   └── hooks
-└── .gitignore
-└── .eslintrc.json
-└── cypress.json
-└── package.json
-└── yarn-lock.json
-└── README.MD
+```sh
+|-- LICENSE.MD
+|-- README.MD
+|-- cypress
+|   |-- fixtures
+|   |-- integration
+|   |-- plugins
+|   `-- support
+|-- cypress.json
+|-- jest.config.js
+|-- mocks
+|-- next-env.d.ts
+|-- next.config.js
+|-- package.json
+|-- public
+|-- serverless.yml
+|-- src
+|   |-- components
+|   |-- contexts
+|   |   |-- Favorite.tsx
+|   |   |-- ZipCode.tsx
+|   |   `-- actions
+|   |-- icons
+|   |-- pages
+|   |   |-- 500.tsx
+|   |   |-- _app.tsx
+|   |   |-- api
+|   |   |   |-- categories
+|   |   |   |-- product
+|   |   |   |-- products
+|   |   |   `-- zipcode
+|   |   |-- categorie
+|   |   |-- favorites
+|   |   |-- index.tsx
+|   |   |-- product
+|   |   `-- products
+|   |-- service
+|   |-- styles
+|   |-- types
+|   `-- utils
+|-- test
+|   |-- components
+|   |-- mock
+|   |-- pages
+|   `-- setupTests.js
+|-- tsconfig.json
+`-- yarn.lock
+
 ```
 
 ### Architecture and Deploy
@@ -52,7 +79,36 @@ For deploy the app im using [Serverless Framework](https://www.serverless.com/) 
 
 ![](https://github.com/serverless-nextjs/serverless-next.js/blob/master/img/arch_no_grid.png?raw=true)
 
-The projects are ready to deploy to AWS ! 🌈
+### Run localy
+
+Clone this repo and install all packages and dependencies required for this project:
+
+    yarn
+
+Create **.env.local** file, create an account in [abstracapi](https://www.abstractapi.com/ip-geolocation-api) and get a api key (is free!)
+
+```bash
+NEXT_PUBLIC_PRODUCTION_API_HOST="http://localhost:3000/api"
+NEXT_PUBLIC_PRODUCTION_API_ZIPCODE="__MY_API_KEY__"
+```
+
+Create **.env.production.local** file, after the first deploy, complete de HOST with the url provided by serverless
+
+```bash
+NEXT_PUBLIC_PRODUCTION_API_HOST="__MY_CLOUDFRONT_URL__"
+```
+
+Start the development environment (then, navigate to http://localhost:3000):
+
+    yarn dev
+
+Building files can be done as follows:
+
+    yarn build
+
+### Deploy
+
+The project are ready to deploy to AWS ! 🌈
 
 You can deploy the project with [Serverless Framework](https://www.serverless.com/) using [Serverless Componentes](https://www.serverless.com/components/), you will need have an account with the correct credentials (API and SECRET KEY) in the file `~/.aws/credentials` or set your AWS credentials as environment variables:
 
@@ -67,7 +123,7 @@ Then install the latest version of Serverless that supports components
 npm install -g serverless
 ```
 
-And simply deploy
+Simply deploy
 
 ```sh
 serverless
@@ -95,35 +151,23 @@ yarn test
 
 In this project i used [Cypress](https://www.cypress.io/) for e2e testing, you can run this tests with the following command
 
-First start the app and in other console run cypress
+Run the tests in the terminal
 
 ```sh
-yarn start
+yarn cy:run
 ```
 
+Run the tests using the UI
+
 ```sh
-yarn cypress
+yarn cy:open
 ```
 
 Click in the `app.spect.js` to start running the tests
 
-### Do you wana try it ?
-
-Clone this repo and install all packages and dependencies required for this project:
-
-    yarn
-
-Start the development environment (then, navigate to http://localhost:8080):
-
-    yarn dev
-
-Building files can be done as follows:
-
-    yarn build
-
 ### Pull Request
 
-Feel free to make a fork and send me a pull request with improvements, i am always willing to improve my way of writing code and thanks.
+Feel free to make a fork and send me a pull request with improvements, i am always willing to improve my way of writing code.
 
 ### License (MIT)
 

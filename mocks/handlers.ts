@@ -104,6 +104,89 @@ export const handlers = [
       })
     )
   }),
+  rest.get('http://localhost:3000/api/products', (req, res, ctx) => {
+    return res(
+      ctx.json({
+        results: [
+          {
+            id: '__ID_PRODUCT_1__',
+            site_id: 'MLA',
+            title: '__TITLE_PRODUCT_1__',
+            price: 8599,
+            sale_price: null,
+            currency_id: 'ARS',
+            available_quantity: 1,
+            sold_quantity: 500,
+            buying_mode: 'buy_it_now',
+            listing_type_id: 'gold_special',
+            stop_time: '2040-08-29T00:57:07.000Z',
+            condition: 'new',
+            thumbnail: 'https://dummyimage.com/400x400/f2f2f2/bababa',
+            accepts_mercadopago: true,
+            shipping: {
+              free_shipping: true,
+              mode: 'me2',
+              tags: ['fulfillment', 'self_service_in', 'mandatory_free_shipping'],
+              logistic_type: 'fulfillment',
+              store_pick_up: false,
+            },
+            original_price: null,
+            category_id: 'MLA370797',
+          },
+          {
+            id: '__ID_PRODUCT_2__',
+            site_id: 'MLA',
+            title: '__TITLE_PRODUCT_2__',
+            price: 2300,
+            sale_price: null,
+            currency_id: 'ARS',
+            available_quantity: 1,
+            sold_quantity: 500,
+            buying_mode: 'buy_it_now',
+            listing_type_id: 'gold_special',
+            stop_time: '2040-08-29T00:57:07.000Z',
+            condition: 'new',
+            thumbnail: 'https://dummyimage.com/400x400/f2f2f2/bababa',
+            accepts_mercadopago: false,
+            shipping: {
+              free_shipping: true,
+              mode: 'me2',
+              tags: ['fulfillment', 'self_service_in', 'mandatory_free_shipping'],
+              logistic_type: 'fulfillment',
+              store_pick_up: false,
+            },
+            original_price: 3000,
+            category_id: 'MLA370797',
+          },
+          {
+            id: '__ID_PRODUCT_3__',
+            site_id: 'MLA',
+            title: '__TITLE_PRODUCT_3__',
+            price: 1400,
+            sale_price: null,
+            currency_id: 'ARS',
+            available_quantity: 1,
+            sold_quantity: 500,
+            buying_mode: 'buy_it_now',
+            listing_type_id: 'gold_special',
+            stop_time: '2040-08-29T00:57:07.000Z',
+            condition: 'new',
+            thumbnail: 'https://dummyimage.com/400x400/f2f2f2/bababa',
+            accepts_mercadopago: true,
+            shipping: {
+              free_shipping: true,
+              mode: 'me2',
+              tags: ['fulfillment', 'self_service_in', 'mandatory_free_shipping'],
+              logistic_type: 'fulfillment',
+              store_pick_up: false,
+            },
+            original_price: null,
+            category_id: 'MLA370797',
+          },
+        ],
+      })
+    )
+  }),
   rest.get('http://localhost:3000/api/product/__ID_PRODUCT_1__', (req, res, ctx) => {
     return res(
       ctx.json({
