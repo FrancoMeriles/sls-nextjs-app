@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import { getPriceFormatted, getPriceRound } from '@base/utils'
+import { getPriceFormatted, getDiscountedPrice } from '@base/utils'
 
 import ContentPrice from '@base/components/ContentPrice'
 import renderer from 'react-test-renderer'
@@ -23,7 +23,10 @@ describe('ContentPrice', () => {
     expect(screen.getByText(getPriceFormatted(mockContentPriceProps.price))).toBeInTheDocument()
     expect(
       screen.getByText(
-        `${getPriceRound(mockContentPriceProps.original_price, mockContentPriceProps.price)} %OFF`
+        `${getDiscountedPrice(
+          mockContentPriceProps.original_price,
+          mockContentPriceProps.price
+        )} %OFF`
       )
     ).toBeInTheDocument()
   })

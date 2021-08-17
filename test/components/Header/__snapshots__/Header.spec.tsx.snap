@@ -132,6 +132,7 @@ exports[`Header should render and match snapshot with required props 1`] = `
         >
           <button
             className="chakra-button css-1a05ek7"
+            role="button"
             type="submit"
           >
             <svg

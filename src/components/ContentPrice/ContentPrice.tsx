@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { getPriceFormatted, getPriceRound } from '@base/utils'
+import { getPriceFormatted, getDiscountedPrice } from '@base/utils'
 import { Box, Text, Stat, StatNumber, Tag } from '@chakra-ui/react'
 
 interface ContentPriceProps {
@@ -18,7 +18,7 @@ const ContentPrice: FC<ContentPriceProps> = ({ original_price, price }) => {
           <StatNumber fontSize="3xl">{getPriceFormatted(price)}</StatNumber>
           {original_price && (
             <Tag size="sm" bg="transparent" color="brand.200">
-              {getPriceRound(original_price, price)} %OFF
+              {getDiscountedPrice(original_price, price)} %OFF
             </Tag>
           )}
         </Box>
