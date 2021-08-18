@@ -8,13 +8,13 @@ import {
 
 describe('Utils', () => {
   const prices = [
-    ['12040', '$ 12.040,00'],
-    ['111020', '$ 111.020,00'],
-    ['4759', '$ 4.759,00'],
-    ['38710', '$ 38.710,00'],
+    [12040, '$ 12.040,00'],
+    [111020, '$ 111.020,00'],
+    [4759, '$ 4.759,00'],
+    [38710, '$ 38.710,00'],
   ]
   test.each(prices)('given %p as arguments, returns %p', (firstArg, expectedResult) => {
-    const result = getPriceFormatted(firstArg)
+    const result = getPriceFormatted(+firstArg)
     expect(result).toEqual(expectedResult)
   })
 

@@ -9,7 +9,7 @@ jest.mock('next/router', () => ({
   useRouter: () => ({
     push: mockPushRouter,
     query: {
-      page: 1,
+      page: 2,
       id: '__QUERY_ID__',
     },
   }),
@@ -35,13 +35,16 @@ describe('Pager', () => {
     userEvent.click(screen.getByText('Siguiente'))
     expect(mockPushRouter).toHaveBeenCalledWith({
       pathname: '__SOME_URL__',
-      query: { page: 2 },
+      query: { page: 3 },
     })
   })
 
   it('should not execute pager backward', async () => {
     render(<Pager url="__SOME_URL__" />)
     userEvent.click(screen.getByText('Anterior'))
-    expect(mockPushRouter).not.toHaveBeenCalled()
+    expect(mockPushRouter).toHaveBeenCalledWith({
+      pathname: '__SOME_URL__',
+      query: { page: 1 },
+    })
   })
 })

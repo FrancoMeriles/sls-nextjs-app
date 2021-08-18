@@ -7,7 +7,7 @@ exports[`Pager should render and match snapshot with required props 1`] = `
 >
   <button
     className="chakra-button css-omeai"
-    disabled={true}
+    disabled={false}
     onClick={[Function]}
     type="button"
   >
@@ -16,7 +16,7 @@ exports[`Pager should render and match snapshot with required props 1`] = `
   <span
     className="css-1aj5j9v"
   >
-    1
+    2
   </span>
   <button
     className="chakra-button css-omeai"

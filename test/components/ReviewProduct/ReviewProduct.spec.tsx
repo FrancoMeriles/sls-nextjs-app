@@ -20,6 +20,14 @@ const allReviews = [
     likes: 12,
     dislikes: 6,
   },
+  {
+    id: 12345678,
+    rate: 1,
+    title: '__TITLE_THREE__',
+    content: '__CONTENT_THREE__',
+    likes: 2,
+    dislikes: 4,
+  },
 ]
 
 const ratingAverage = 3.8

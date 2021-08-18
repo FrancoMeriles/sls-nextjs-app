@@ -1,4 +1,4 @@
-import ApiClient from './apiClient'
+import ApiClient from '@base/service/apiClient'
 import { CategoriesType, CategorieType, PagingType, ProductsType } from '@base/types'
 
 class LocalApi {

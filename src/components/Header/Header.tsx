@@ -53,7 +53,13 @@ const Header = () => {
         <Search onClose={onClose} />
       </Box>
       <Flex>
-        <Box display={{ base: 'block', md: 'none' }} cursor="pointer" onClick={showSearch} mr={5}>
+        <Box
+          data-testid="show-search"
+          display={{ base: 'block', md: 'none' }}
+          cursor="pointer"
+          onClick={showSearch}
+          mr={5}
+        >
           <SearchIcon boxSize={5} />
         </Box>
         <Box pos="relative" cursor="pointer" onClick={gotoFavorite} data-testid="go-to-favorite">

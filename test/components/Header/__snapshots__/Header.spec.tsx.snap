@@ -155,6 +155,7 @@ exports[`Header should render and match snapshot with required props 1`] = `
   >
     <div
       className="css-xv2kcw"
+      data-testid="show-search"
       onClick={[Function]}
     >
       <svg

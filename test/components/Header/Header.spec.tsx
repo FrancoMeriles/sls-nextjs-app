@@ -1,6 +1,28 @@
 import { render, screen } from '@testing-library/react'
 import renderer from 'react-test-renderer'
 import userEvent from '@testing-library/user-event'
+import { useDisclosure } from '@chakra-ui/react'
+
+jest.mock('@chakra-ui/react', () => {
+  const originalModule = jest.requireActual('@chakra-ui/react')
+  return {
+    __esModule: true,
+    ...originalModule,
+    useDisclosure: jest.fn(),
+  }
+})
+
+const useDisclosureMock = useDisclosure as jest.Mock
+
+const mockDialogSearchOnOpen = jest.fn()
+const mockDialogSearchOnClose = jest.fn()
+const mockDialogSearchIsOpen = false
+
+useDisclosureMock.mockImplementation(() => ({
+  onOpen: mockDialogSearchOnOpen,
+  isOpen: mockDialogSearchIsOpen,
+  onClose: mockDialogSearchOnClose,
+}))
 
 import Header from '@base/components/Header'
 
@@ -29,4 +51,25 @@ describe('Header', () => {
     expect(mockPushRouter).toHaveBeenCalled()
     expect(mockPushRouter).toHaveBeenCalledWith('/favorites')
   })
+
+  it('should open dialog', async () => {
+    render(<Header />)
+    userEvent.click(screen.getByTestId('show-search'))
+    expect(mockDialogSearchOnOpen).toHaveBeenCalled()
+  })
+
+  // it('should execute close dialog', async () => {
+  //   const mockDialogSearchOnOpen = jest.fn()
+  //   const mockDialogSearchOnClose = jest.fn()
+  //   const mockDialogSearchIsOpen = true
+
+  //   useDisclosureMock.mockImplementation(() => ({
+  //     onOpen: mockDialogSearchOnOpen,
+  //     isOpen: mockDialogSearchIsOpen,
+  //     onClose: mockDialogSearchOnClose,
+  //   }))
+  //   render(<Header />)
+  //   userEvent.click(screen.getByTestId('show-search'))
+  //   expect(mockDialogSearchOnOpen).toHaveBeenCalled()
+  // })
 })
