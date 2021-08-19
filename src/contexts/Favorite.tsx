@@ -2,14 +2,21 @@ import { useReducer, useContext, createContext, useEffect, useState } from 'reac
 import * as actionTypes from './actions/actionTypes'
 import * as favoriteAction from './actions/favorites'
 
-const addFavorite = (state, action) => [...state, action.product]
-const batchFavorites = (state, action) => [...state, ...action.products]
-const removeFavorite = (state, action) => state.filter((product) => product.id !== action.id)
+const addFavorite = (state: favoriteAction.Product[], action: favoriteAction.FavoritesAction) => [
+  ...state,
+  action.product,
+]
+const batchFavorites = (
+  state: favoriteAction.Product[],
+  action: favoriteAction.FavoritesAction
+) => [...state, ...action.products]
+const removeFavorite = (state: favoriteAction.Product[], action: favoriteAction.FavoritesAction) =>
+  state.filter((product) => product.id !== action.id)
 
 const FavoriteStateContext = createContext(null)
 const FavoriteDispatchContext = createContext(null)
 
-const reducer = (state, action) => {
+const reducer = (state: favoriteAction.Product[], action: favoriteAction.FavoritesAction) => {
   switch (action.type) {
     case actionTypes.ADD_FAVORITE: {
       const newState = addFavorite(state, action)

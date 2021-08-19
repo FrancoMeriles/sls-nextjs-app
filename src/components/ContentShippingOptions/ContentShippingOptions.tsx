@@ -1,5 +1,7 @@
 import { FC } from 'react'
 import { Box } from '@chakra-ui/react'
+
+// Components
 import BestShippingOption from './BestShippingOption'
 import DevolutionsShippingOptions from './DevolutionsShippingOptions'
 

@@ -13,9 +13,12 @@ import {
   Button,
   useDisclosure,
 } from '@chakra-ui/react'
+
+// Contexts
 import { useZipCode, useDispatchZipCode } from '@base/contexts/ZipCode'
 import { setZipCode } from '@base/contexts/actions/zipCode'
 
+// Icons
 import { Position } from '@base/icons'
 
 const ZipCode = () => {
@@ -31,7 +34,7 @@ const ZipCode = () => {
   const handleFormSubmit = (e: React.FormEvent<EventTarget>): void => {
     e.preventDefault()
     if (value) {
-      dispatch(setZipCode(value))
+      dispatch(setZipCode(Number(value)))
     }
     onClose()
   }

@@ -1,4 +1,6 @@
 import { Progress, Box, Text, Flex, Divider, HStack } from '@chakra-ui/react'
+
+// Components
 import RatedStar from '@base/components/RatedStar'
 
 const ReviewProductHeader = ({ ratingAverage, sumRatingsOpinions, ratingLevels }) => {

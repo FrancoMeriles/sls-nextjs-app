@@ -1,8 +1,9 @@
-import { FC } from 'react'
-import React from 'react'
+import React, { FC } from 'react'
 import { Button, Input, InputGroup, InputRightElement } from '@chakra-ui/react'
-import { SearchIcon } from '@chakra-ui/icons'
 import { useRouter } from 'next/router'
+
+// Icons
+import { SearchIcon } from '@chakra-ui/icons'
 
 interface SearchProps {
   onClose(): void

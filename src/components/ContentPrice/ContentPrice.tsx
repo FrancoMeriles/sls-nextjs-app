@@ -1,6 +1,8 @@
 import { FC } from 'react'
-import { getPriceFormatted, getDiscountedPrice } from '@base/utils'
 import { Box, Text, Stat, StatNumber, Tag } from '@chakra-ui/react'
+
+// Utils
+import { getPriceFormatted, getDiscountedPrice } from '@base/utils'
 
 interface ContentPriceProps {
   original_price: number

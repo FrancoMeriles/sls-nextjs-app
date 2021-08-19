@@ -1,6 +1,10 @@
 import { FC } from 'react'
 import { Box, Text, Flex } from '@chakra-ui/react'
+
+// Icons
 import { Thumbs } from '@base/icons'
+
+// Components
 import RatedStar from '@base/components/RatedStar'
 
 interface ReviewProductItemProps {

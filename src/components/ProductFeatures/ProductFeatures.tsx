@@ -1,5 +1,7 @@
 import { FC } from 'react'
 import { Box, Grid, Flex, Divider, Text } from '@chakra-ui/react'
+
+// Icons
 import { Check } from '@base/icons'
 
 interface ProductFeaturesProps {

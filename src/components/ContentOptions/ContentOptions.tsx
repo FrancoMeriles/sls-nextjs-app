@@ -1,6 +1,8 @@
 import { FC } from 'react'
-import { Shield, Warranty } from '@base/icons'
 import { Box, Flex, Text, chakra } from '@chakra-ui/react'
+
+// Icons
+import { Shield, Warranty } from '@base/icons'
 
 interface ContentOptionsProps {
   warranty: string

@@ -1,9 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useFavorite } from '@base/contexts/Favorite'
 import { useRouter } from 'next/router'
-
 import {
   Box,
   Flex,
@@ -14,8 +12,15 @@ import {
   AlertDialogContent,
   AlertDialogOverlay,
 } from '@chakra-ui/react'
+
+// Contexts
+import { useFavorite } from '@base/contexts/Favorite'
+
+// Icons
 import { HeartOutline } from '@base/icons'
 import { SearchIcon } from '@chakra-ui/icons'
+
+// Components
 import Search from '@base/components/Search'
 import ZipCode from '@base/components/ZipCode'
 

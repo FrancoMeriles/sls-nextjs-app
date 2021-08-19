@@ -1,6 +1,10 @@
 import { FC } from 'react'
 import { Box } from '@chakra-ui/react'
+
+// Utils
 import { getStarsToRate } from '@base/utils'
+
+// Icons
 import { Star } from '@base/icons'
 
 interface RatedStarProps {

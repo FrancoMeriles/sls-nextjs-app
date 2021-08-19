@@ -1,6 +1,8 @@
 import { FC } from 'react'
 import { Flex, Text } from '@chakra-ui/react'
-import RatedStar from '../RatedStar'
+
+// Components
+import RatedStar from '@base/components/RatedStar'
 
 interface ProductRatedProps {
   ratingAverage: number

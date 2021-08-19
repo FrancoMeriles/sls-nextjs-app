@@ -15,12 +15,19 @@ import {
   ModalFooter,
   chakra,
 } from '@chakra-ui/react'
-import 'dayjs/locale/es'
-import dayjs from 'dayjs'
-import { getPriceFormatted } from '@base/utils'
+
+// Icons
 import { Position, Truck } from '@base/icons'
 
+// Utils
+import { getPriceFormatted } from '@base/utils'
+
+// Contexts
 import { useZipCode } from '@base/contexts/ZipCode'
+
+// Libraries
+import dayjs from 'dayjs'
+import 'dayjs/locale/es'
 dayjs.locale('es')
 
 interface BestShippingOptionProps {

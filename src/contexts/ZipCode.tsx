@@ -6,11 +6,11 @@ import * as zipCodeAction from './actions/zipCode'
 const ZipCodeStateContext = createContext(null)
 const ZipCodeDispatchContext = createContext(null)
 
-const reducer = (state, action) => {
+const reducer = (state: number, action: zipCodeAction.ZipCodeActions) => {
   switch (action.type) {
     case actionTypes.SET_ZIPCODE: {
       const newZipCode = action.zipCode
-      localStorage.setItem('zipCode', action.zipCode)
+      localStorage.setItem('zipCode', String(action.zipCode))
       return newZipCode
     }
     default:
@@ -31,7 +31,7 @@ export const ZipCodeProvider = ({ children }) => {
     }
     getZipCode()
     if (zipCodeLocalStorage) {
-      dispatch(zipCodeAction.setZipCode(zipCodeLocalStorage))
+      dispatch(zipCodeAction.setZipCode(Number(zipCodeLocalStorage)))
     }
   }, [])
 

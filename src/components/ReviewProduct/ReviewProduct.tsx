@@ -1,5 +1,7 @@
 import { FC } from 'react'
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
+
+// Components
 import ReviewProductItem from '@base/components/ReviewProductItem'
 import ReviewProductHeader from '@base/components/ReviewProductHeader'
 

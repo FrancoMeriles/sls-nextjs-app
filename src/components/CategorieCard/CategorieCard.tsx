@@ -1,7 +1,9 @@
 import { FC } from 'react'
 import { LinkBox, LinkOverlay, Text, chakra } from '@chakra-ui/react'
-import { getRandomColor } from '@base/utils'
 import NextLink from 'next/link'
+
+// Utils
+import { getRandomColor } from '@base/utils'
 
 interface CategorieCardProps {
   id: string

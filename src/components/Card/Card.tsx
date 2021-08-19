@@ -1,10 +1,15 @@
 import { FC } from 'react'
-import { LinkBox, LinkOverlay, Image, Box, Text, Stat, StatNumber, Tag } from '@chakra-ui/react'
 import NextLink from 'next/link'
+import { LinkBox, LinkOverlay, Image, Box, Text, Stat, StatNumber, Tag } from '@chakra-ui/react'
 
-import { getPriceFormatted, getDiscountedPrice, checkIfProductExistInFavorite } from '@base/utils'
+// Context and Actions
 import { addFavorite, removeFavorite } from '@base/contexts/actions/favorites'
 import { useDispatchFavorite, useFavorite } from '@base/contexts/Favorite'
+
+// Utils
+import { getPriceFormatted, getDiscountedPrice, checkIfProductExistInFavorite } from '@base/utils'
+
+// Icons
 import { HeartFull, HeartOutline } from '@base/icons'
 
 interface ShippingInterface {
@@ -57,7 +62,7 @@ const Card: FC<ProductProps> = ({ product }) => {
           <Box p={5}>
             <Stat>
               <Box display="flex">
-                <StatNumber fontSize="xl">{getPriceFormatted(String(price))}</StatNumber>
+                <StatNumber fontSize="xl">{getPriceFormatted(price)}</StatNumber>
                 {original_price && (
                   <Tag size="sm" bg="transparent" color="brand.200">
                     {getDiscountedPrice(original_price, price)} %OFF

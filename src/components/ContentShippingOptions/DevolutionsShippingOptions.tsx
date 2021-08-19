@@ -13,6 +13,8 @@ import {
   useDisclosure,
   ModalFooter,
 } from '@chakra-ui/react'
+
+// Icons
 import { Devolutions, Money, Calendar } from '@base/icons'
 
 const DevolutionsShippingOptions = () => {
