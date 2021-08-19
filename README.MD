@@ -79,6 +79,32 @@ For deploy the app im using [Serverless Framework](https://www.serverless.com/) 
 
 ![](https://github.com/serverless-nextjs/serverless-next.js/blob/master/img/arch_no_grid.png?raw=true)
 
+Basically what [Serverless Next.js Component](https://github.com/serverless-nextjs/serverless-next.js) does is create a cloudfront distribution with many resources, a function lambda with the content of your app (SSR) and another lambda with the internal api of nextjs both edge
+Also it will create multiple buckets in s3 with different contents, static files, assets
+
+### Deploy
+
+The project are ready to deploy to AWS ! 🌈
+
+You can deploy the project with [Serverless Framework](https://www.serverless.com/) using [Serverless Componentes](https://www.serverless.com/components/), you will need have an account with the correct credentials (API and SECRET KEY) in the file `~/.aws/credentials` or set your AWS credentials as environment variables:
+
+```bash
+AWS_ACCESS_KEY_ID=accesskey
+AWS_SECRET_ACCESS_KEY=sshhh
+```
+
+Then install the latest version of Serverless that supports components
+
+```sh
+npm install -g serverless
+```
+
+Simply deploy
+
+```sh
+serverless
+```
+
 ### Run localy
 
 Clone this repo and install all packages and dependencies required for this project:
@@ -105,29 +131,6 @@ Start the development environment (then, navigate to http://localhost:3000):
 Building files can be done as follows:
 
     yarn build
-
-### Deploy
-
-The project are ready to deploy to AWS ! 🌈
-
-You can deploy the project with [Serverless Framework](https://www.serverless.com/) using [Serverless Componentes](https://www.serverless.com/components/), you will need have an account with the correct credentials (API and SECRET KEY) in the file `~/.aws/credentials` or set your AWS credentials as environment variables:
-
-```bash
-AWS_ACCESS_KEY_ID=accesskey
-AWS_SECRET_ACCESS_KEY=sshhh
-```
-
-Then install the latest version of Serverless that supports components
-
-```sh
-npm install -g serverless
-```
-
-Simply deploy
-
-```sh
-serverless
-```
 
 ### Linter
 
