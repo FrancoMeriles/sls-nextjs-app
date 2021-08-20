@@ -48,7 +48,13 @@ const Header = () => {
       <Flex alignItems="center">
         <Link href="/">
           <a>
-            <Image src="/assets/img/logoMeli.png" alt="Mercado Libre" width="134" height="34" />
+            <Image
+              src="/assets/img/logoMeli.png"
+              alt="Mercado Libre"
+              width="134"
+              height="34"
+              unoptimized={process.env.ENVIRONMENT !== 'PRODUCTION'}
+            />
           </a>
         </Link>
         <ZipCode />

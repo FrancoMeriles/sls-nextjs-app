@@ -1,8 +1,8 @@
 # Serverless NextJS App
 
-This project is a simple app using [Mercado Libre - API](https://developers.mercadolibre.com.ar/es_ar/api-docs-es), [NextJS](https://nextjs.org/) and deploying using [Serverless Framework](https://www.serverless.com/) with [Serverless Component](https://www.serverless.com/components/).
+This project is a simple app using [Mercado Libre - API](https://developers.mercadolibre.com.ar/es_ar/api-docs-es), [NextJS](https://nextjs.org/) and deploying with [Serverless Framework](https://www.serverless.com/) and [Serverless Component](https://www.serverless.com/components/).
 
-[Live Preview](https://francomeriles.github.io/)
+[Live Preview](https://d1injbokbijh2o.cloudfront.net)
 
 ## Stack
 
