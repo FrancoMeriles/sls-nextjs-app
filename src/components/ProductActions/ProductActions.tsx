@@ -18,6 +18,10 @@ interface ProductActionsProps {
 interface ProductProps {
   available_quantity: number
   id: string
+  title: string
+  thumbnail: string
+  price: number
+  original_price?: number
 }
 
 const ProductActions: FC<ProductActionsProps> = ({ product }) => {
